@@ -1,6 +1,4 @@
 package com.example.quikfinance;
-import quikConfig.CategoryClass;
-import quikConfig.Transaction;
 
 //main class//
 public class WorkingUserFinances {
