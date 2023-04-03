@@ -2,14 +2,14 @@ package com.example.quikfinance;
 
 public class Transaction {
     //Could store as ID or as string
-    private CategoryClass category;
+    private Category category;
     //store as int in cents
     protected int price;
     private String date;
     private String description;
     private boolean wasPaid;
 
-    public Transaction(CategoryClass category, int amount, String date, boolean wasPaid) {
+    public Transaction(Category category, int amount, String date, boolean wasPaid) {
         this.category = category;
         this.price = amount;
         this.date = date;
@@ -18,7 +18,7 @@ public class Transaction {
         category.updatePrice(amount);
     }
 
-    public Transaction(CategoryClass category, int amount, String date, boolean wasPaid, String description) {
+    public Transaction(Category category, int amount, String date, boolean wasPaid, String description) {
         this.category = category;
         this.price = amount;
         this.date = date;
@@ -27,7 +27,7 @@ public class Transaction {
         category.updatePrice(amount);
     }
 
-    public void setCategory(CategoryClass newCategory) {
+    public void setCategory(Category newCategory) {
         category = newCategory;
     }
 
@@ -57,7 +57,7 @@ public class Transaction {
         return "$" + dollars + "." + cents;
     }
 
-    public CategoryClass getCategory() {
+    public Category getCategory() {
         return category;
     }
 

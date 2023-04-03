@@ -7,13 +7,13 @@ import com.example.quikfinance.*;
 public class TransactionTest {
 
     Transaction transaction;
-    CategoryClass category1;
-    CategoryClass category2;
+    Category category1;
+    Category category2;
 
     @BeforeEach
     public void setUp() {
-        category1 = new CategoryClass(1, "Groceries");
-        category2 = new CategoryClass(2, "Taxes");
+        category1 = new Category(1, "Groceries");
+        category2 = new Category(2, "Taxes");
         transaction = new Transaction(category1, 50000, "10/12/1998", true);
     }
 

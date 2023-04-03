@@ -2,17 +2,17 @@ package com.example;
 
 import org.junit.jupiter.api.*;
 
-import com.example.quikfinance.CategoryClass;
+import com.example.quikfinance.Category;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CategoryTest {
 
-    CategoryClass category;
+    Category category;
 
     @BeforeEach
     public void setUp() {
-        category = new CategoryClass(0, "Housing");
+        category = new Category(0, "Housing");
     }
 
     @AfterEach
