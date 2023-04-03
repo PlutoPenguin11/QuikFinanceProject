@@ -51,7 +51,7 @@ public class Transaction {
 
     //Converts cents back to $x.xx format and returns
     public String getPrice() {
-        String money = "" + (price * 100);
+        String money = "" + price;
         String dollars = money.substring(0, money.length() - 2);
         String cents = money.substring(money.length() - 2);
         return "$" + dollars + "." + cents;
