@@ -1,12 +1,12 @@
 package com.example.quikfinance;
 //this is the class for creating categories for whatever you are buying !!!????
 //
-public class CategoryClass {
+public class Category {
     private int totalCost;
     private int ID;
     private String itemCategory = null;
 
-    public CategoryClass(int ID, String itemcategory) {
+    public Category(int ID, String itemcategory) {
         this.totalCost = 0;
         this.itemCategory = itemcategory;
         this.ID = ID;
