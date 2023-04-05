@@ -1,5 +1,6 @@
 package com.example.quikfinance;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -86,11 +87,18 @@ public class QuikFinanceController {
     @FXML
     private ToggleGroup row5;
 
-    Transaction[] transactions = new Transaction[8];
+    private Transaction transaction1 = new Transaction();
+    private Transaction transaction2 = new Transaction();
+    private Transaction transaction3 = new Transaction();
+    private Transaction transaction4 = new Transaction();
+    private Transaction transaction5 = new Transaction();
+    private Transaction transaction6 = new Transaction();
+    private Transaction transaction7 = new Transaction();
+    private Transaction transaction8 = new Transaction();
+    private Transaction[] transactions = {transaction1, transaction2, transaction3, transaction4, transaction5, transaction6, transaction7, transaction8};
 
     @FXML
     void amount1KeyTyped(KeyEvent event) {
-        transactions[0] = new Transaction();
         transactions[0].setAmount(Double.parseDouble(AmountTextField1.getText()));
         if (AmountTextField1.getText() == "") {
             BalanceTextField1.setText("");
@@ -104,7 +112,6 @@ public class QuikFinanceController {
 
     @FXML
     void amount2KeyTyped(KeyEvent event) {
-        transactions[1] = new Transaction();
         transactions[1].setAmount(Double.parseDouble(AmountTextField2.getText()));
         if (AmountTextField2.getText() == "") {
             BalanceTextField2.setText("");
@@ -192,5 +199,46 @@ public class QuikFinanceController {
         double runningBalance = startingBalance - amount;
         String runningBalanceString = String.format("%.2f", runningBalance);
         BalanceTextField8.setText(String.valueOf(runningBalanceString));
+    }
+
+    @FXML
+    void amountKeyTyped(KeyEvent event) {
+        // Get the double value of the starting balance text field.
+        double startingBalance = Double.parseDouble(StartingBalanceTextField.getText());
+
+        // If the user clears an amount, set that amount's value within the object to zero.
+        if (AmountTextField1.getText() == "")
+            transactions[0].setAmount(0);
+        if (AmountTextField2.getText() == "")
+            transactions[1].setAmount(0);
+        if (AmountTextField3.getText() == "")
+            transactions[2].setAmount(0);
+        if (AmountTextField4.getText() == "")
+            transactions[3].setAmount(0);
+        if (AmountTextField5.getText() == "")
+            transactions[4].setAmount(0);
+        if (AmountTextField6.getText() == "")
+            transactions[5].setAmount(0);
+        if (AmountTextField7.getText() == "")
+            transactions[6].setAmount(0);
+        if (AmountTextField8.getText() == "")
+            transactions[7].setAmount(0);
+
+        BalanceTextField1.setText(String.valueOf(startingBalance - transactions[0].getAmount());
+        BalanceTextField2.setText(String.valueOf(startingBalance - transactions[0].getAmount() - transactions[1].getAmount());
+        BalanceTextField3.setText(String.valueOf(startingBalance - transactions[0].getAmount() - transactions[1].getAmount() - transactions[2].getAmount());
+        BalanceTextField4.setText(String.valueOf(startingBalance - transactions[0].getAmount());
+        BalanceTextField5.setText(String.valueOf(startingBalance - transactions[0].getAmount());
+        BalanceTextField6.setText(String.valueOf(startingBalance - transactions[0].getAmount());
+        BalanceTextField7.setText(String.valueOf(startingBalance - transactions[0].getAmount());
+        BalanceTextField8.setText(String.valueOf(startingBalance - transactions[0].getAmount());
+        double runningBalance = startingBalance - transactions[0].amount;
+        String runningBalanceString = String.format("%.2f", runningBalance);
+        BalanceTextField1.setText(String.valueOf(runningBalanceString));
+
+        double startingBalance = Double.parseDouble(StartingBalanceTextField.getText());
+        double runningBalance = startingBalance - transactions[0].amount - transactions[1].amount;
+        String runningBalanceString = String.format("%.2f", runningBalance);
+        BalanceTextField2.setText(String.valueOf(startingBalance - transactions[0].getAmount()));
     }
 }
