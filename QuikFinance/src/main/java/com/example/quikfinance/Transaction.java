@@ -1,75 +1,63 @@
 package com.example.quikfinance;
 
 public class Transaction {
-    //Could store as ID or as string
-    private Category category;
-    //store as int in cents
-    protected int price;
     private String date;
     private String description;
+    private Category category;
     private boolean wasPaid;
+    protected int amount;
 
-    public Transaction(Category category, int amount, String date, boolean wasPaid) {
-        this.category = category;
-        this.price = amount;
+    public Transaction(String date, String description, Category category, boolean wasPaid, int amount) {
         this.date = date;
-        this.wasPaid = wasPaid;
-        this.description = "Transaction for " + category.getID();
-        category.updatePrice(amount);
-    }
-
-    public Transaction(Category category, int amount, String date, boolean wasPaid, String description) {
-        this.category = category;
-        this.price = amount;
-        this.date = date;
-        this.wasPaid = wasPaid;
         this.description = description;
+        this.category = category;
+        this.wasPaid = wasPaid;
+        this.amount = amount;
+
         category.updatePrice(amount);
     }
 
-    public void setCategory(Category newCategory) {
-        category = newCategory;
-    }
-
-    //Precondition: String is a valid date
+    // Methods to set and get the date of the transaction.
     public void setDate(String newDate) {
         date = newDate;
     }
-
-    public void setStatus(boolean newStatus) {
-        wasPaid = newStatus;
-    }
-
-    public void setDescription(String newDescription) {
-        description = newDescription;
-    }
-
-    public void setPrice(int amount) {
-        category.updatePrice(-price);
-        category.updatePrice(price = amount);
-    }
-
-    //Converts cents back to $x.xx format and returns
-    public String getPrice() {
-        String money = "" + price;
-        String dollars = money.substring(0, money.length() - 2);
-        String cents = money.substring(money.length() - 2);
-        return "$" + dollars + "." + cents;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
     public String getDate() {
         return date;
     }
 
+    // Methods to set and get the description of the transaction.
+    public void setDescription(String newDescription) {
+        description = newDescription;
+    }
+    public String getDescription() {
+        return description;
+    }
+
+    // Methods to set and get the category of the transaction.
+    public void setCategory(Category newCategory) {
+        category = newCategory;
+    }
+    public Category getCategory() {
+        return category;
+    }
+
+    // Methods to set and get the boolean that tells us whether the amount was paid or received.
+    public void setStatus(boolean newStatus) {
+        wasPaid = newStatus;
+    }
     public boolean getStatus() {
         return wasPaid;
     }
 
-    public String getDescription() {
-        return description;
+    // Methods to set and get the amount.
+    public void setAmount(int amount) {
+        category.updatePrice(-amount);
+        category.updatePrice(this.amount = amount);
+    }
+    public String getAmount() {
+        String money = "" + amount;
+        String dollars = money.substring(0, money.length() - 2);
+        String cents = money.substring(money.length() - 2);
+        return "$" + dollars + "." + cents;
     }
 }
