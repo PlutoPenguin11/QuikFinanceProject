@@ -86,28 +86,32 @@ public class QuikFinanceController {
     @FXML
     private ToggleGroup row5;
 
+    Transaction[] transactions = new Transaction[8];
+
     @FXML
     void amount1KeyTyped(KeyEvent event) {
+        transactions[0] = new Transaction();
+        transactions[0].setAmount(Double.parseDouble(AmountTextField1.getText()));
         if (AmountTextField1.getText() == "") {
             BalanceTextField1.setText("");
             return;
         }
-        double amount = Double.parseDouble(AmountTextField1.getText());
         double startingBalance = Double.parseDouble(StartingBalanceTextField.getText());
-        double runningBalance = startingBalance - amount;
+        double runningBalance = startingBalance - transactions[0].amount;
         String runningBalanceString = String.format("%.2f", runningBalance);
         BalanceTextField1.setText(String.valueOf(runningBalanceString));
     }
 
     @FXML
     void amount2KeyTyped(KeyEvent event) {
+        transactions[1] = new Transaction();
+        transactions[1].setAmount(Double.parseDouble(AmountTextField2.getText()));
         if (AmountTextField2.getText() == "") {
             BalanceTextField2.setText("");
             return;
         }
-        double amount = Double.parseDouble(AmountTextField2.getText());
-        double startingBalance = Double.parseDouble(BalanceTextField1.getText());
-        double runningBalance = startingBalance - amount;
+        double startingBalance = Double.parseDouble(StartingBalanceTextField.getText());
+        double runningBalance = startingBalance - transactions[0].amount - transactions[1].amount;
         String runningBalanceString = String.format("%.2f", runningBalance);
         BalanceTextField2.setText(String.valueOf(runningBalanceString));
     }

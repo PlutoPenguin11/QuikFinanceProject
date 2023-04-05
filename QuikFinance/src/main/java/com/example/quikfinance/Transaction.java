@@ -3,14 +3,23 @@ package com.example.quikfinance;
 public class Transaction {
     private String date;
     private String description;
-    private Category category;
+    // private Category category;
     private boolean wasPaid;
-    protected int amount;
+    protected double amount;
 
+    public Transaction() {
+        this.date = "";
+        this.description = "";
+        // this.category = null;
+        this.wasPaid = true;
+        this.amount = 0;
+
+        // category.updatePrice((int) amount);
+    }
     public Transaction(String date, String description, Category category, boolean wasPaid, int amount) {
         this.date = date;
         this.description = description;
-        this.category = category;
+        // this.category = category;
         this.wasPaid = wasPaid;
         this.amount = amount;
 
@@ -35,10 +44,11 @@ public class Transaction {
 
     // Methods to set and get the category of the transaction.
     public void setCategory(Category newCategory) {
-        category = newCategory;
+        // category = newCategory;
     }
     public Category getCategory() {
-        return category;
+        // return category;
+        return null;
     }
 
     // Methods to set and get the boolean that tells us whether the amount was paid or received.
@@ -50,14 +60,12 @@ public class Transaction {
     }
 
     // Methods to set and get the amount.
-    public void setAmount(int amount) {
-        category.updatePrice(-amount);
-        category.updatePrice(this.amount = amount);
+    public void setAmount(double amount) {
+        this.amount = amount;
+        // category.updatePrice(-amount);
+        // category.updatePrice(this.amount = amount);
     }
-    public String getAmount() {
-        String money = "" + amount;
-        String dollars = money.substring(0, money.length() - 2);
-        String cents = money.substring(money.length() - 2);
-        return "$" + dollars + "." + cents;
+    public double getAmount() {
+        return amount;
     }
 }
