@@ -3,7 +3,6 @@ package com.example.quikfinance;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
@@ -11,6 +10,8 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 
 public class QuikFinanceController {
+
+    // Initialize the functional parts of the graphical user interface.
     @FXML
     private TextField AmountTextField1;
     @FXML
@@ -117,54 +118,55 @@ public class QuikFinanceController {
     // Put these eight transaction objects into an array.
     private Transaction[] transactions = {transaction1, transaction2, transaction3, transaction4, transaction5, transaction6, transaction7, transaction8};
 
-    // When the user types a description, update the description that's stored in the object.
+    // When the user types a description for the first transaction, update the description that's stored in the object.
     @FXML
     void description1KeyTyped(KeyEvent event) {
         transactions[0].setDescription(DescriptionTextField1.getText());
     }
 
-    // When the user types a description, update the description that's stored in the object.
+    // When the user types a description for the second transaction, update the description that's stored in the object.
     @FXML
     void description2KeyTyped(KeyEvent event) {
         transactions[1].setDescription(DescriptionTextField2.getText());
     }
 
-    // When the user types a description, update the description that's stored in the object.
+    // When the user types a description for the third transaction, update the description that's stored in the object.
     @FXML
     void description3KeyTyped(KeyEvent event) {
         transactions[2].setDescription(DescriptionTextField3.getText());
     }
 
-    // When the user types a description, update the description that's stored in the object.
+    // When the user types a description for the fourth transaction, update the description that's stored in the object.
     @FXML
     void description4KeyTyped(KeyEvent event) {
         transactions[3].setDescription(DescriptionTextField4.getText());
     }
 
-    // When the user types a description, update the description that's stored in the object.
+    // When the user types a description for the fifth transaction, update the description that's stored in the object.
     @FXML
     void description5KeyTyped(KeyEvent event) {
         transactions[4].setDescription(DescriptionTextField5.getText());
     }
 
-    // When the user types a description, update the description that's stored in the object.
+    // When the user types a description for the sixth transaction, update the description that's stored in the object.
     @FXML
     void description6KeyTyped(KeyEvent event) {
         transactions[5].setDescription(DescriptionTextField6.getText());
     }
 
-    // When the user types a description, update the description that's stored in the object.
+    // When the user types a description for the seventh transaction, update the description that's stored in the object.
     @FXML
     void description7KeyTyped(KeyEvent event) {
         transactions[6].setDescription(DescriptionTextField7.getText());
     }
 
-    // When the user types a description, update the description that's stored in the object.
+    // When the user types a description for the eighth transaction, update the description that's stored in the object.
     @FXML
     void description8KeyTyped(KeyEvent event) {
         transactions[7].setDescription(DescriptionTextField8.getText());
     }
 
+    // When the user types amounts for any transaction, update the running balance for all transactions. Also update the amount that's stored in the object.
     @FXML
     void amountKeyTyped(KeyEvent event) {
 
@@ -189,7 +191,7 @@ public class QuikFinanceController {
             else transactions[0].setAmount(Double.parseDouble(AmountTextField1.getText()));
         }
 
-        // If the user clears the second transaction's amount, set the second transaction object's amount to zero.
+        // If the user clears the second transaction's amount, set the second transaction object's amount to zero and update the display.
         if (AmountTextField2.getText() == "") {
             transactions[1].setAmount(0);
             BalanceTextField2.setText("");
@@ -203,7 +205,7 @@ public class QuikFinanceController {
             else transactions[1].setAmount(Double.parseDouble(AmountTextField2.getText()));
         }
 
-        // If the user clears the third transaction's amount, set the third transaction object's amount to zero.
+        // If the user clears the third transaction's amount, set the third transaction object's amount to zero and update the display.
         if (AmountTextField3.getText() == "") {
             transactions[2].setAmount(0);
             BalanceTextField3.setText("");
@@ -217,7 +219,7 @@ public class QuikFinanceController {
             else transactions[2].setAmount(Double.parseDouble(AmountTextField3.getText()));
         }
 
-        // If the user clears the fourth transaction's amount, set the fourth transaction object's amount to zero.
+        // If the user clears the fourth transaction's amount, set the fourth transaction object's amount to zero and update the display.
         if (AmountTextField4.getText() == "") {
             transactions[3].setAmount(0);
             BalanceTextField4.setText("");
@@ -231,7 +233,7 @@ public class QuikFinanceController {
             else transactions[3].setAmount(Double.parseDouble(AmountTextField4.getText()));
         }
 
-        // If the user clears the fifth transaction's amount, set the fifth transaction object's amount to zero.
+        // If the user clears the fifth transaction's amount, set the fifth transaction object's amount to zero and update the display.
         if (AmountTextField5.getText() == "") {
             transactions[4].setAmount(0);
             BalanceTextField5.setText("");
@@ -245,7 +247,7 @@ public class QuikFinanceController {
             else transactions[4].setAmount(Double.parseDouble(AmountTextField5.getText()));
         }
 
-        // If the user clears the sixth transaction's amount, set the sixth transaction object's amount to zero.
+        // If the user clears the sixth transaction's amount, set the sixth transaction object's amount to zero and update the display.
         if (AmountTextField6.getText() == "") {
             transactions[5].setAmount(0);
             BalanceTextField6.setText("");
@@ -259,7 +261,7 @@ public class QuikFinanceController {
             else transactions[5].setAmount(Double.parseDouble(AmountTextField6.getText()));
         }
 
-        // If the user clears the seventh transaction's amount, set the seventh transaction object's amount to zero.
+        // If the user clears the seventh transaction's amount, set the seventh transaction object's amount to zero and update the display.
         if (AmountTextField7.getText() == "") {
             transactions[6].setAmount(0);
             BalanceTextField7.setText("");
@@ -273,7 +275,7 @@ public class QuikFinanceController {
             else transactions[6].setAmount(Double.parseDouble(AmountTextField7.getText()));
         }
 
-        // If the user clears the eighth transaction's amount, set the eighth transaction object's amount to zero.
+        // If the user clears the eighth transaction's amount, set the eighth transaction object's amount to zero and update the display.
         if (AmountTextField8.getText() == "") {
             transactions[7].setAmount(0);
             BalanceTextField8.setText("");
@@ -337,4 +339,11 @@ public class QuikFinanceController {
         if (AmountTextField8.getText() != "")
             BalanceTextField8.setText(formattedEighthRunningBalance);
     }
+
+    // Still needed:
+    // In the GUI, implement the date as a drop-down selection.
+    // Behind the scenes, update the transaction objects' dates.
+    // In the GUI, implement the category menu so that once the user selects a category, the GUI displays that category instead of the word "Category".
+    // Behind the scenes, update the transaction objects' categories.
+    // Behind the scenes, write the transactions' attributes to a file so that they're stored between runs.
 }
