@@ -117,11 +117,53 @@ public class QuikFinanceController {
     // Put these eight transaction objects into an array.
     private Transaction[] transactions = {transaction1, transaction2, transaction3, transaction4, transaction5, transaction6, transaction7, transaction8};
 
+    // When the user types a description, update the description that's stored in the object.
     @FXML
     void description1KeyTyped(KeyEvent event) {
         transactions[0].setDescription(DescriptionTextField1.getText());
     }
 
+    // When the user types a description, update the description that's stored in the object.
+    @FXML
+    void description2KeyTyped(KeyEvent event) {
+        transactions[1].setDescription(DescriptionTextField2.getText());
+    }
+
+    // When the user types a description, update the description that's stored in the object.
+    @FXML
+    void description3KeyTyped(KeyEvent event) {
+        transactions[2].setDescription(DescriptionTextField3.getText());
+    }
+
+    // When the user types a description, update the description that's stored in the object.
+    @FXML
+    void description4KeyTyped(KeyEvent event) {
+        transactions[3].setDescription(DescriptionTextField4.getText());
+    }
+
+    // When the user types a description, update the description that's stored in the object.
+    @FXML
+    void description5KeyTyped(KeyEvent event) {
+        transactions[4].setDescription(DescriptionTextField5.getText());
+    }
+
+    // When the user types a description, update the description that's stored in the object.
+    @FXML
+    void description6KeyTyped(KeyEvent event) {
+        transactions[5].setDescription(DescriptionTextField6.getText());
+    }
+
+    // When the user types a description, update the description that's stored in the object.
+    @FXML
+    void description7KeyTyped(KeyEvent event) {
+        transactions[6].setDescription(DescriptionTextField7.getText());
+    }
+
+    // When the user types a description, update the description that's stored in the object.
+    @FXML
+    void description8KeyTyped(KeyEvent event) {
+        transactions[7].setDescription(DescriptionTextField8.getText());
+    }
 
     @FXML
     void amountKeyTyped(KeyEvent event) {
