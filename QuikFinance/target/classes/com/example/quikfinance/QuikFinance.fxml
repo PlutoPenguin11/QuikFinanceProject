@@ -148,11 +148,11 @@
                                  </toggleGroup>
                               </ToggleButton>
                               <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Received" toggleGroup="$row5" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                              <TextField fx:id="AmountTextField1" onKeyTyped="#amount1KeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                              <TextField fx:id="AmountTextField2" onKeyTyped="#amount2KeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                              <TextField fx:id="AmountTextField3" onKeyTyped="#amount3KeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                              <TextField fx:id="AmountTextField4" onKeyTyped="#amount4KeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                              <TextField fx:id="AmountTextField5" onKeyTyped="#amount5KeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                              <TextField fx:id="AmountTextField1" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                              <TextField fx:id="AmountTextField2" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                              <TextField fx:id="AmountTextField3" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                              <TextField fx:id="AmountTextField4" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                              <TextField fx:id="AmountTextField5" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="7" />
                               <TextField fx:id="BalanceTextField1" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="3" />
                               <TextField fx:id="BalanceTextField2" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="4" />
                               <TextField fx:id="BalanceTextField3" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="5" />
@@ -255,9 +255,9 @@
                               <TextField fx:id="DescriptionTextField6" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                               <TextField fx:id="DescriptionTextField7" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                               <TextField fx:id="DescriptionTextField8" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                              <TextField fx:id="AmountTextField6" onKeyTyped="#amount6KeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-                              <TextField fx:id="AmountTextField7" onKeyTyped="#amount7KeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-                              <TextField fx:id="AmountTextField8" onKeyTyped="#amount8KeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                              <TextField fx:id="AmountTextField6" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                              <TextField fx:id="AmountTextField7" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                              <TextField fx:id="AmountTextField8" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="10" />
                               <TextField fx:id="BalanceTextField6" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="8" />
                               <TextField fx:id="BalanceTextField7" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="9" />
                               <TextField fx:id="BalanceTextField8" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="10" />
