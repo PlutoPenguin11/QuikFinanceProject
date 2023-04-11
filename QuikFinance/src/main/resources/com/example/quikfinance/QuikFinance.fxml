@@ -114,7 +114,7 @@
                               <TextField fx:id="DescriptionTextField3" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                               <TextField fx:id="DescriptionTextField4" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                               <TextField fx:id="DescriptionTextField5" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                              <ToggleButton fx:id="PaidButton1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="3">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="row1" />
                                  </toggleGroup>
@@ -124,25 +124,25 @@
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font></Label>
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                              <ToggleButton fx:id="PaidButton2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="4">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="row2" />
                                  </toggleGroup>
                               </ToggleButton>
                               <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Received" toggleGroup="$row2" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                              <ToggleButton fx:id="PaidButton3" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="5">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="row3" />
                                  </toggleGroup>
                               </ToggleButton>
                               <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Received" toggleGroup="$row3" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                              <ToggleButton fx:id="PaidButton4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="6">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="row4" />
                                  </toggleGroup>
                               </ToggleButton>
                               <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Received" toggleGroup="$row4" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                              <ToggleButton fx:id="PaidButton5" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="7">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="row5" />
                                  </toggleGroup>
@@ -243,11 +243,11 @@
                                     <MenuItem mnemonicParsing="false" text="Other" />
                                 </items>
                               </MenuButton>
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                              <ToggleButton fx:id="PaidButton6" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="8" />
                               <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Received" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                              <ToggleButton fx:id="PaidButton7" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="9" />
                               <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Received" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                              <ToggleButton fx:id="PaidButton8" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="10" />
                               <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Received" GridPane.columnIndex="4" GridPane.rowIndex="10" />
                               <TextField fx:id="DateTextField8" GridPane.rowIndex="10" />
                               <TextField fx:id="DateTextField7" GridPane.rowIndex="9" />
