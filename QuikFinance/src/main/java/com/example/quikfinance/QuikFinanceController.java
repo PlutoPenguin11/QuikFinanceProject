@@ -175,8 +175,11 @@ public class QuikFinanceController {
 
 
 
-        // If the user clears the first transaction's amount, set the first transaction object's amount to zero.
-        if (AmountTextField1.getText() == "") transactions[0].setAmount(0);
+        // If the user clears the first transaction's amount, set the first transaction object's amount to zero and update the display.
+        if (AmountTextField1.getText() == "") {
+            transactions[0].setAmount(0);
+            BalanceTextField1.setText("");
+        }
         else {
             // If the user enters an amount, determine whether it was paid.
             transactions[0].setStatus(PaidButton1.isSelected());
@@ -187,7 +190,10 @@ public class QuikFinanceController {
         }
 
         // If the user clears the second transaction's amount, set the second transaction object's amount to zero.
-        if (AmountTextField2.getText() == "") transactions[1].setAmount(0);
+        if (AmountTextField2.getText() == "") {
+            transactions[1].setAmount(0);
+            BalanceTextField2.setText("");
+        }
         else {
             // If the user enters an amount, determine whether it was paid.
             transactions[1].setStatus(PaidButton2.isSelected());
@@ -198,7 +204,10 @@ public class QuikFinanceController {
         }
 
         // If the user clears the third transaction's amount, set the third transaction object's amount to zero.
-        if (AmountTextField3.getText() == "") transactions[2].setAmount(0);
+        if (AmountTextField3.getText() == "") {
+            transactions[2].setAmount(0);
+            BalanceTextField3.setText("");
+        }
         else {
             // If the user enters an amount, determine whether it was paid.
             transactions[2].setStatus(PaidButton3.isSelected());
@@ -209,7 +218,10 @@ public class QuikFinanceController {
         }
 
         // If the user clears the fourth transaction's amount, set the fourth transaction object's amount to zero.
-        if (AmountTextField4.getText() == "") transactions[3].setAmount(0);
+        if (AmountTextField4.getText() == "") {
+            transactions[3].setAmount(0);
+            BalanceTextField4.setText("");
+        }
         else {
             // If the user enters an amount, determine whether it was paid.
             transactions[3].setStatus(PaidButton4.isSelected());
@@ -220,7 +232,10 @@ public class QuikFinanceController {
         }
 
         // If the user clears the fifth transaction's amount, set the fifth transaction object's amount to zero.
-        if (AmountTextField5.getText() == "") transactions[4].setAmount(0);
+        if (AmountTextField5.getText() == "") {
+            transactions[4].setAmount(0);
+            BalanceTextField5.setText("");
+        }
         else {
             // If the user enters an amount, determine whether it was paid.
             transactions[4].setStatus(PaidButton5.isSelected());
@@ -231,7 +246,10 @@ public class QuikFinanceController {
         }
 
         // If the user clears the sixth transaction's amount, set the sixth transaction object's amount to zero.
-        if (AmountTextField6.getText() == "") transactions[5].setAmount(0);
+        if (AmountTextField6.getText() == "") {
+            transactions[5].setAmount(0);
+            BalanceTextField6.setText("");
+        }
         else {
             // If the user enters an amount, determine whether it was paid.
             transactions[5].setStatus(PaidButton6.isSelected());
@@ -242,7 +260,10 @@ public class QuikFinanceController {
         }
 
         // If the user clears the seventh transaction's amount, set the seventh transaction object's amount to zero.
-        if (AmountTextField7.getText() == "") transactions[6].setAmount(0);
+        if (AmountTextField7.getText() == "") {
+            transactions[6].setAmount(0);
+            BalanceTextField7.setText("");
+        }
         else {
             // If the user enters an amount, determine whether it was paid.
             transactions[6].setStatus(PaidButton7.isSelected());
@@ -253,7 +274,10 @@ public class QuikFinanceController {
         }
 
         // If the user clears the eighth transaction's amount, set the eighth transaction object's amount to zero.
-        if (AmountTextField8.getText() == "") transactions[7].setAmount(0);
+        if (AmountTextField8.getText() == "") {
+            transactions[7].setAmount(0);
+            BalanceTextField8.setText("");
+        }
         else {
             // If the user enters an amount, determine whether it was paid.
             transactions[7].setStatus(PaidButton8.isSelected());
