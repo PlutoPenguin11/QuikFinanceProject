@@ -123,48 +123,56 @@ public class QuikFinanceController {
     @FXML
     void description1KeyTyped(KeyEvent event) {
         transactions[0].setDescription(DescriptionTextField1.getText());
+        update();
     }
 
     // When the user types a description for the second transaction, update the description that's stored in the object.
     @FXML
     void description2KeyTyped(KeyEvent event) {
         transactions[1].setDescription(DescriptionTextField2.getText());
+        update();
     }
 
     // When the user types a description for the third transaction, update the description that's stored in the object.
     @FXML
     void description3KeyTyped(KeyEvent event) {
         transactions[2].setDescription(DescriptionTextField3.getText());
+        update();
     }
 
     // When the user types a description for the fourth transaction, update the description that's stored in the object.
     @FXML
     void description4KeyTyped(KeyEvent event) {
         transactions[3].setDescription(DescriptionTextField4.getText());
+        update();
     }
 
     // When the user types a description for the fifth transaction, update the description that's stored in the object.
     @FXML
     void description5KeyTyped(KeyEvent event) {
         transactions[4].setDescription(DescriptionTextField5.getText());
+        update();
     }
 
     // When the user types a description for the sixth transaction, update the description that's stored in the object.
     @FXML
     void description6KeyTyped(KeyEvent event) {
         transactions[5].setDescription(DescriptionTextField6.getText());
+        update();
     }
 
     // When the user types a description for the seventh transaction, update the description that's stored in the object.
     @FXML
     void description7KeyTyped(KeyEvent event) {
         transactions[6].setDescription(DescriptionTextField7.getText());
+        update();
     }
 
     // When the user types a description for the eighth transaction, update the description that's stored in the object.
     @FXML
     void description8KeyTyped(KeyEvent event) {
         transactions[7].setDescription(DescriptionTextField8.getText());
+        update();
     }
 
     // When the user types amounts for any transaction, update the running balance for all transactions. Also update the amount that's stored in the object.
@@ -339,6 +347,8 @@ public class QuikFinanceController {
         String formattedEighthRunningBalance = String.format("$%.2f", eighthRunningBalance);
         if (AmountTextField8.getText() != "")
             BalanceTextField8.setText(formattedEighthRunningBalance);
+
+        update();
     }
 
     private void update() {
