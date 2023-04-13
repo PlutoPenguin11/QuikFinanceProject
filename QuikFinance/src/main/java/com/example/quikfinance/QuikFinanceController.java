@@ -106,6 +106,7 @@ public class QuikFinanceController {
     private ToggleButton PaidButton8;
 
     // Initialize eight transaction objects.
+    private Transaction transaction0 = new Transaction();
     private Transaction transaction1 = new Transaction();
     private Transaction transaction2 = new Transaction();
     private Transaction transaction3 = new Transaction();
@@ -113,11 +114,10 @@ public class QuikFinanceController {
     private Transaction transaction5 = new Transaction();
     private Transaction transaction6 = new Transaction();
     private Transaction transaction7 = new Transaction();
-    private Transaction transaction8 = new Transaction();
     private Storage storage = Storage.instance();
 
     // Put these eight transaction objects into an array.
-    private Transaction[] transactions = {transaction1, transaction2, transaction3, transaction4, transaction5, transaction6, transaction7, transaction8};
+    private Transaction[] transactions = {transaction0, transaction1, transaction2, transaction3, transaction4, transaction5, transaction6, transaction7};
 
     // When the user types a description for the first transaction, update the description that's stored in the object.
     @FXML
