@@ -114,6 +114,7 @@ public class QuikFinanceController {
     private Transaction transaction6 = new Transaction();
     private Transaction transaction7 = new Transaction();
     private Transaction transaction8 = new Transaction();
+    private Storage = Storage.instance();
 
     // Put these eight transaction objects into an array.
     private Transaction[] transactions = {transaction1, transaction2, transaction3, transaction4, transaction5, transaction6, transaction7, transaction8};
@@ -338,6 +339,10 @@ public class QuikFinanceController {
         String formattedEighthRunningBalance = String.format("$%.2f", eighthRunningBalance);
         if (AmountTextField8.getText() != "")
             BalanceTextField8.setText(formattedEighthRunningBalance);
+    }
+
+    private void update () {
+
     }
 
     // Still needed:
