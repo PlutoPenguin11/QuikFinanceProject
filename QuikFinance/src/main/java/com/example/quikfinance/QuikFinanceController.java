@@ -114,7 +114,7 @@ public class QuikFinanceController {
     private Transaction transaction6 = new Transaction();
     private Transaction transaction7 = new Transaction();
     private Transaction transaction8 = new Transaction();
-    private Storage = Storage.instance();
+    //private Storage = Storage.instance();
 
     // Put these eight transaction objects into an array.
     private Transaction[] transactions = {transaction1, transaction2, transaction3, transaction4, transaction5, transaction6, transaction7, transaction8};
