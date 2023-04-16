@@ -1,7 +1,11 @@
 package com.example.quikfinance;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -9,7 +13,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 
-public class QuikFinanceController {
+public class QuikFinanceController implements Initializable {
 
     // Initialize the functional parts of the graphical user interface.
     @FXML
@@ -104,24 +108,40 @@ public class QuikFinanceController {
     private ToggleButton PaidButton7;
     @FXML
     private ToggleButton PaidButton8;
+    @FXML
+    private ToggleButton UpdateButton;
 
     // Initialize eight transaction objects.
-    private Transaction transaction0 = new Transaction();
-    private Transaction transaction1 = new Transaction();
-    private Transaction transaction2 = new Transaction();
-    private Transaction transaction3 = new Transaction();
-    private Transaction transaction4 = new Transaction();
-    private Transaction transaction5 = new Transaction();
-    private Transaction transaction6 = new Transaction();
-    private Transaction transaction7 = new Transaction();
     private Storage storage = Storage.instance();
 
     // Put these eight transaction objects into an array.
-    private Transaction[] transactions = {transaction0, transaction1, transaction2, transaction3, transaction4, transaction5, transaction6, transaction7};
+    private Transaction[] transactions;
+
+    @FXML @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        storage.deserialize();
+        transactions = storage.getList();
+
+        for (Transaction transaction : transactions) {
+            if (transaction == null) {
+                transaction = new Transaction();
+            }
+        }
+
+        DescriptionTextField1.setText(transactions[0].getDescription());
+        DescriptionTextField2.setText(transactions[1].getDescription());
+        DescriptionTextField3.setText(transactions[2].getDescription());
+        DescriptionTextField4.setText(transactions[3].getDescription());
+        DescriptionTextField5.setText(transactions[4].getDescription());
+        DescriptionTextField6.setText(transactions[5].getDescription());
+        DescriptionTextField7.setText(transactions[6].getDescription());
+        DescriptionTextField8.setText(transactions[7].getDescription());
+    }
 
     // When the user types a description for the first transaction, update the description that's stored in the object.
     @FXML
     void description1KeyTyped(KeyEvent event) {
+        event.KEY_PRESSED.equals('F');
         transactions[0].setDescription(DescriptionTextField1.getText());
         update();
     }
@@ -351,6 +371,7 @@ public class QuikFinanceController {
         update();
     }
 
+    @FXML
     private void update() {
         storage.updateAll(transactions);
         storage.serialize();

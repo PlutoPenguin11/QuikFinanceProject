@@ -6,9 +6,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+
 public class Storage {
 
-    private final static String FILE_PATH = "QuikFinance/src/main/resources/com/example/quikfinance/storage.ser";
+    private final static String FILE_PATH = "QuikFinance/src/main/resources/com/example/quikfinance/ledger.ser";
     private Transaction[] transactionArray;
     private static Storage uniqueInstance = new Storage();
 
@@ -57,6 +58,12 @@ public class Storage {
             objIn.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+        }
+
+        for (Transaction transaction : transactionArray) {
+            if (transaction == null) {
+                transaction = new Transaction();
+            }
         }
     }
 
