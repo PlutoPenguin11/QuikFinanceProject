@@ -116,6 +116,8 @@ public class QuikFinanceController implements Initializable {
 
     // Put these eight transaction objects into an array.
     private Transaction[] transactions;
+    private TextField[] descriptionFields = new TextField[] { DescriptionTextField1, DescriptionTextField2, DescriptionTextField3, DescriptionTextField4, 
+                                                              DescriptionTextField5, DescriptionTextField6, DescriptionTextField7, DescriptionTextField8 };
 
     @FXML @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -128,20 +130,14 @@ public class QuikFinanceController implements Initializable {
             }
         }
 
-        DescriptionTextField1.setText(transactions[0].getDescription());
-        DescriptionTextField2.setText(transactions[1].getDescription());
-        DescriptionTextField3.setText(transactions[2].getDescription());
-        DescriptionTextField4.setText(transactions[3].getDescription());
-        DescriptionTextField5.setText(transactions[4].getDescription());
-        DescriptionTextField6.setText(transactions[5].getDescription());
-        DescriptionTextField7.setText(transactions[6].getDescription());
-        DescriptionTextField8.setText(transactions[7].getDescription());
+        for (int i = 0; i < 8; i++) {
+            descriptionFields[i].setText(transactions[i].getDescription());
+        }
     }
 
     // When the user types a description for the first transaction, update the description that's stored in the object.
     @FXML
     void description1KeyTyped(KeyEvent event) {
-        event.KEY_PRESSED.equals('F');
         transactions[0].setDescription(DescriptionTextField1.getText());
         update();
     }
