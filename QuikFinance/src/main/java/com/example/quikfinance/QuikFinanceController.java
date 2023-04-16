@@ -116,13 +116,15 @@ public class QuikFinanceController implements Initializable {
 
     // Put these eight transaction objects into an array.
     private Transaction[] transactions;
-    private TextField[] descriptionFields = new TextField[] { DescriptionTextField1, DescriptionTextField2, DescriptionTextField3, DescriptionTextField4, 
-                                                              DescriptionTextField5, DescriptionTextField6, DescriptionTextField7, DescriptionTextField8 };
+    private TextField[] descriptionFields;
 
     @FXML @Override
     public void initialize(URL url, ResourceBundle rb) {
         storage.deserialize();
         transactions = storage.getList();
+
+        descriptionFields = new TextField[] { DescriptionTextField1, DescriptionTextField2, DescriptionTextField3, DescriptionTextField4, 
+                                              DescriptionTextField5, DescriptionTextField6, DescriptionTextField7, DescriptionTextField8 };
 
         for (Transaction transaction : transactions) {
             if (transaction == null) {
