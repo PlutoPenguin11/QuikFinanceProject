@@ -445,12 +445,12 @@ public class QuikFinanceController implements Initializable {
     }
 
     @FXML
-    void paidButtonHit(KeyEvent event) {
-        amountKeyTyped(event);
+    void paidButtonHit() {
+        amountKeyTyped(null);
     }
 
     @FXML
-    void showExpenseTracker(KeyEvent event) {
+    void showExpenseTracker() {
         ExpenseTracker expenseTracker = new ExpenseTracker();
         expenseTracker.start(new Stage());
     }
