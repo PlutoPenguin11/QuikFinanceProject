@@ -113,7 +113,7 @@ public class QuikFinanceController implements Initializable {
     private ToggleButton UpdateButton;
 
     // Initialize eight transaction objects.
-    private Storage storage = Storage.instance();
+    private LedgerStorage storage = LedgerStorage.instance();
 
     // Put these eight transaction objects into an array.
     private Transaction[] transactions;

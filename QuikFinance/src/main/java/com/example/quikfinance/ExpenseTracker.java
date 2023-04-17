@@ -25,7 +25,7 @@ public class ExpenseTracker extends Application {
     private PieChart pieChart = new PieChart();
 
     // Define the categories
-    private final String[] categories = {"Food", "Transportation", "Housing", "Entertainment", "Utilities", "Other"};
+    private final String[] categories = { "Food", "Transportation", "Housing", "Entertainment", "Utilities", "Other" };
 
     @Override
     public void start(Stage primaryStage) {
@@ -100,7 +100,7 @@ public class ExpenseTracker extends Application {
     }
 
     // Update the pie chart with the current expenses
-// Update the pie chart with the current expenses
+    // Update the pie chart with the current expenses
     private void updatePieChart() {
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
         double totalAmount = 0.0;
@@ -122,13 +122,15 @@ public class ExpenseTracker extends Application {
             }
         }
         for (PieChart.Data data : pieChartData) {
-            data.setName(data.getName() + " (" + String.format("%.2f", data.getPieValue() / totalAmount * 100) + "%)"); // Add percentage to category name
+            data.setName(data.getName() + " (" + String.format("%.2f", data.getPieValue() / totalAmount * 100) + "%)"); // Add
+                                                                                                                        // percentage
+                                                                                                                        // to
+                                                                                                                        // category
+                                                                                                                        // name
             data.setPieValue(data.getPieValue() / totalAmount * 100); // Convert to percentage
         }
         pieChart.setData(pieChartData);
     }
-
-
 
     public static void main(String[] args) {
         launch(args);
