@@ -19,6 +19,7 @@ public class Storage {
         transactionArray = new Transaction[8];
     }
 
+    // For singleton design pattern. Enforces there only being 1 instance.
     public static Storage instance() {
         return uniqueInstance;
     }
@@ -27,6 +28,7 @@ public class Storage {
         transactionArray[index] = updatedTransaction;
     }
 
+    // Call when user makes a change to TextField
     public Boolean updateAll(Transaction[] transactions, String balance) {
         startingBalance = balance;
         if (transactions.length == 8)
@@ -45,6 +47,7 @@ public class Storage {
     }
 
     public void serialize() {
+        // Stores all 8 transaction objjects
         try {
             FileOutputStream fileOut = new FileOutputStream(LEDGER_PATH);
             ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
@@ -54,6 +57,7 @@ public class Storage {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // Stores starting balance
         try {
             FileOutputStream fileOut = new FileOutputStream(STARTING_BALANCE_PATH);
             ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
@@ -66,6 +70,7 @@ public class Storage {
     }
 
     public void deserialize() {
+        // Reads all 8 stored transaction objects
         try {
             FileInputStream fileIn = new FileInputStream(LEDGER_PATH);
             ObjectInputStream objIn = new ObjectInputStream(fileIn);
@@ -75,6 +80,7 @@ public class Storage {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+        // Reads stored starting balance
         try {
             FileInputStream fileIn = new FileInputStream(STARTING_BALANCE_PATH);
             ObjectInputStream objIn = new ObjectInputStream(fileIn);

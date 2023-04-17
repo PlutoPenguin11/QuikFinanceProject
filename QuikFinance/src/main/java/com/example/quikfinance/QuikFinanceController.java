@@ -128,6 +128,7 @@ public class QuikFinanceController implements Initializable {
 
         StartingBalanceTextField.setText(storage.getStartingBalance());
 
+        // Organizes TextFields for reading storage, since we aren't using array lists.
         amountFields = new TextField[] { AmountTextField1, AmountTextField2, AmountTextField3, AmountTextField4,
                                          AmountTextField5, AmountTextField6, AmountTextField7, AmountTextField8 };
         dateFields = new TextField[] { DateTextField1, DateTextField2, DateTextField3, DateTextField4,
@@ -136,12 +137,14 @@ public class QuikFinanceController implements Initializable {
                                               DescriptionTextField5, DescriptionTextField6, DescriptionTextField7, DescriptionTextField8 };
         paidButtons = new ToggleButton[] { PaidButton1, PaidButton2, PaidButton3, PaidButton4, PaidButton5, PaidButton6, PaidButton7, PaidButton8 };
 
+        // Instantiates all null objects
         for (Transaction transaction : transactions) {
             if (transaction == null) {
                 transaction = new Transaction();
             }
         }
 
+        // Reads and fills in stored data
         for (int i = 0; i < 8; i++) {
             dateFields[i].setText(transactions[i].getDate());
             descriptionFields[i].setText(transactions[i].getDescription());
@@ -149,6 +152,7 @@ public class QuikFinanceController implements Initializable {
             amountFields[i].setText(Math.abs(transactions[i].getAmount())+"");
         }
 
+        // Updates running balance fields based on stored data
         amountKeyTyped(null);
     }
 
