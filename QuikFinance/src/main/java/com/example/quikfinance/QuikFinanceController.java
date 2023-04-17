@@ -2,7 +2,6 @@ package com.example.quikfinance;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
 
 public class QuikFinanceController implements Initializable {
 
@@ -116,15 +116,25 @@ public class QuikFinanceController implements Initializable {
 
     // Put these eight transaction objects into an array.
     private Transaction[] transactions;
+    private TextField[] amountFields;
+    private TextField[] dateFields;
     private TextField[] descriptionFields;
+    private ToggleButton[] paidButtons;
 
     @FXML @Override
     public void initialize(URL url, ResourceBundle rb) {
         storage.deserialize();
         transactions = storage.getList();
 
+        StartingBalanceTextField.setText("500.0");
+
+        amountFields = new TextField[] { AmountTextField1, AmountTextField2, AmountTextField3, AmountTextField4,
+                                         AmountTextField5, AmountTextField6, AmountTextField7, AmountTextField8 };
+        dateFields = new TextField[] { DateTextField1, DateTextField2, DateTextField3, DateTextField4,
+                                       DateTextField5, DateTextField6, DateTextField7, DateTextField8 };
         descriptionFields = new TextField[] { DescriptionTextField1, DescriptionTextField2, DescriptionTextField3, DescriptionTextField4, 
                                               DescriptionTextField5, DescriptionTextField6, DescriptionTextField7, DescriptionTextField8 };
+        paidButtons = new ToggleButton[] { PaidButton1, PaidButton2, PaidButton3, PaidButton4, PaidButton5, PaidButton6, PaidButton7, PaidButton8 };
 
         for (Transaction transaction : transactions) {
             if (transaction == null) {
@@ -133,8 +143,13 @@ public class QuikFinanceController implements Initializable {
         }
 
         for (int i = 0; i < 8; i++) {
+            dateFields[i].setText(transactions[i].getDate());
             descriptionFields[i].setText(transactions[i].getDescription());
+            paidButtons[i].setSelected(transactions[i].getStatus());
+            amountFields[i].setText(Math.abs(transactions[i].getAmount())+"");
         }
+
+        amountKeyTyped(null);
     }
 
     // When the user types a description for the first transaction, update the description that's stored in the object.
@@ -196,8 +211,6 @@ public class QuikFinanceController implements Initializable {
     // When the user types amounts for any transaction, update the running balance for all transactions. Also update the amount that's stored in the object.
     @FXML
     void amountKeyTyped(KeyEvent event) {
-
-
 
         // Get the double value of the starting balance text field.
         double startingBalance = Double.parseDouble(StartingBalanceTextField.getText());
