@@ -1,15 +1,17 @@
 package com.example.quikfinance;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.*;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -461,10 +463,95 @@ public class QuikFinanceController implements Initializable {
         storage.serialize();
     }
 
+    /*
+
+
+    Expense calculator controller
+
+
+     */
+    // GUI components
+    @FXML private TextField expenseField;
+    @FXML private ComboBox<String> categoryComboBox;
+    @FXML private DatePicker datePicker;
+    @FXML private Button addButton;
+    @FXML private ListView<String> expenseListView;
+    @FXML private PieChart pieChart;
+
+    // Data
+    private final String[] categories = {"Food", "Transportation", "Housing", "Utilities", "Entertainment", "Other"};
+    private ObservableList<String> expenseList = FXCollections.observableArrayList();
+
+    // Initialize method
+    public void initialize() {
+        // Add categories to combo box
+        categoryComboBox.getItems().addAll(categories);
+        categoryComboBox.setValue(categories[0]);
+
+        // Set current date to date picker
+        datePicker.setValue(LocalDate.now());
+
+        // Set expense list view items
+        expenseListView.setItems(expenseList);
+
+        // Update the pie chart
+        updatePieChart();
+    }
+
+    // Set up the button event handler
+    @FXML
+    private void handleaddButtonAction(ActionEvent event) {
+        // Get the expense details
+        String expense = expenseField.getText();
+        String category = categoryComboBox.getValue();
+        LocalDate date = datePicker.getValue();
+
+        // Add the expense to the list
+        expenseList.add(expense + " - " + category + " - " + date);
+
+        // Update the pie chart
+        updatePieChart();
+
+        // Clear the input fields
+        expenseField.clear();
+        categoryComboBox.setValue(categories[0]);
+        datePicker.setValue(LocalDate.now());
+    }
+
+    // Update the pie chart
+// Update the pie chart with the current expenses
+    private void updatePieChart() {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+        double totalAmount = 0.0;
+        for (String category : categories) {
+            double categoryAmount = 0.0;
+            for (String expense : expenseList) {
+                String[] parts = expense.split(" - ");
+                if (parts[1].equals(category)) {
+                    try {
+                        categoryAmount += Double.parseDouble(parts[0]);
+                    } catch (NumberFormatException e) {
+                        // Ignore expenses that have invalid amounts
+                    }
+                }
+            }
+            if (categoryAmount > 0) {
+                totalAmount += categoryAmount;
+                pieChartData.add(new PieChart.Data(category + " - " + categoryAmount, categoryAmount));
+            }
+        }
+        for (PieChart.Data data : pieChartData) {
+            data.setName(data.getName() + " (" + String.format("%.2f", data.getPieValue() / totalAmount * 100) + "%)"); // Add percentage to category name
+            data.setPieValue(data.getPieValue() / totalAmount * 100); // Convert to percentage
+        }
+        pieChart.setData(pieChartData);
+    }
+
+}
+
     // Still needed:
     // In the GUI, implement the date as a drop-down selection.
     // Behind the scenes, update the transaction objects' dates.
     // In the GUI, implement the category menu so that once the user selects a category, the GUI displays that category instead of the word "Category".
     // Behind the scenes, update the transaction objects' categories.
     // Behind the scenes, write the transactions' attributes to a file so that they're stored between runs.
-}

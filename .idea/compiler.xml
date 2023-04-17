@@ -9,8 +9,5 @@
         <module name="QuikFinance" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="QuikFinance" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
