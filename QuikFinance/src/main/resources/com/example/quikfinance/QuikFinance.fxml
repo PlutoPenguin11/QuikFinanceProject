@@ -174,7 +174,8 @@
                               <TextField fx:id="BalanceTextField6" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="8" />
                               <TextField fx:id="BalanceTextField7" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="9" />
                               <TextField fx:id="BalanceTextField8" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="10" />
-                              <Button fx:id="expenseTrackerButton" mnemonicParsing="false" onAction="#showExpenseTracker" prefHeight="26.0" prefWidth="146.0" text="Expense Tracker" />
+                              <Button fx:id="expenseTrackerButton" mnemonicParsing="false" onAction="#showExpenseTracker" prefHeight="26.0" prefWidth="146.0" text="Open Expense Tracker" />
+                              <Button fx:id="clearTrackerButton" mnemonicParsing="false" onAction="#clearExpenseTracker" prefHeight="26.0" prefWidth="155.0" text="Clear Expense Tracker" GridPane.rowIndex="1" />
                            </children>
                            <padding>
                               <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />

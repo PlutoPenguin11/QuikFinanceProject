@@ -459,6 +459,11 @@ public class QuikFinanceController implements Initializable {
     }
 
     @FXML
+    void clearExpenseTracker() {
+        
+    }
+
+    @FXML
     void startingBalanceKeyTyped(KeyEvent event) {
         amountKeyTyped(null);
     }
