@@ -13,6 +13,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.time.LocalDate;
 
+import com.example.quikfinance.storage.TrackerStorage;
+
 public class ExpenseTracker extends Application {
 
     // Define the UI components
@@ -22,7 +24,8 @@ public class ExpenseTracker extends Application {
     private Button addButton = new Button("Add Expense");
     private ListView<String> expenseListView = new ListView<>();
     private ObservableList<String> expenseList = FXCollections.observableArrayList();
-    private PieChart pieChart = new PieChart();
+    private TrackerStorage storage = TrackerStorage.instance();
+    private PieChart pieChart = storage.getChart();
 
     // Define the categories
     private final String[] categories = { "Food", "Transportation", "Housing", "Entertainment", "Utilities", "Other" };
@@ -130,6 +133,9 @@ public class ExpenseTracker extends Application {
             data.setPieValue(data.getPieValue() / totalAmount * 100); // Convert to percentage
         }
         pieChart.setData(pieChartData);
+
+        storage.update(pieChart);
+        storage.serialize();
     }
 
     public static void main(String[] args) {

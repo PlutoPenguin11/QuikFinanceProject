@@ -49,7 +49,7 @@ public class TrackerStorage {
         }
     }
 
-    public void deserialize() {
+    public PieChart deserialize() {
         // Reads the pie chart
         try {
             FileInputStream fileIn = new FileInputStream(TRACKER_PATH);
@@ -60,6 +60,8 @@ public class TrackerStorage {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+        return chart;
     }
 
 }

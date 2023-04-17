@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.example.quikfinance.storage.LedgerStorage;
+import com.example.quikfinance.storage.TrackerStorage;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -117,6 +118,7 @@ public class QuikFinanceController implements Initializable {
 
     // Initialize eight transaction objects.
     private LedgerStorage storage = LedgerStorage.instance();
+    private TrackerStorage storedChart = TrackerStorage.instance();
 
     // Put these eight transaction objects into an array.
     private Transaction[] transactions;
@@ -460,7 +462,7 @@ public class QuikFinanceController implements Initializable {
 
     @FXML
     void clearExpenseTracker() {
-        
+        storedChart.delete();
     }
 
     @FXML
