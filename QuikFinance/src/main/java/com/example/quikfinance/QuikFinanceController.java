@@ -12,6 +12,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class QuikFinanceController implements Initializable {
 
@@ -441,6 +442,17 @@ public class QuikFinanceController implements Initializable {
     void date8KeyTyped(KeyEvent event) {
         transactions[7].setDate(DateTextField8.getText());
         update();
+    }
+
+    @FXML
+    void paidButtonHit(KeyEvent event) {
+        amountKeyTyped(event);
+    }
+
+    @FXML
+    void showExpenseTracker(KeyEvent event) {
+        ExpenseTracker expenseTracker = new ExpenseTracker();
+        expenseTracker.start(new Stage());
     }
 
     @FXML
