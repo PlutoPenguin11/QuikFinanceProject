@@ -6,15 +6,17 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
 
 public class TrackerStorage {
     private final static String TRACKER_PATH = "QuikFinance/src/main/resources/com/example/quikfinance/tracker.ser";
     private static TrackerStorage uniqueInstance;
-    private PieChart chart;
+    ObservableList<PieChart.Data> data;
 
     private TrackerStorage() {
-        chart = new PieChart();
+        data = FXCollections.observableArrayList();
     }
 
     public static TrackerStorage instance() {
@@ -23,16 +25,16 @@ public class TrackerStorage {
         return uniqueInstance;
     }
 
-    public void update(PieChart chart) {
-        this.chart = chart;
+    public void update(ObservableList<PieChart.Data> data) {
+        this.data = data;
     }
 
-    public PieChart getChart() {
-        return chart;
+    public ObservableList<PieChart.Data> getData() {
+        return data;
     }
 
     public void delete() {
-        chart = new PieChart();
+        data = FXCollections.observableArrayList();
         serialize();
     }
 
@@ -41,7 +43,7 @@ public class TrackerStorage {
         try {
             FileOutputStream fileOut = new FileOutputStream(TRACKER_PATH);
             ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
-            objOut.writeObject(chart);
+            objOut.writeObject(data);
             objOut.close();
             fileOut.close();
         } catch (IOException e) {
@@ -49,19 +51,19 @@ public class TrackerStorage {
         }
     }
 
-    public PieChart deserialize() {
+    public ObservableList<PieChart.Data> deserialize() {
         // Reads the pie chart
         try {
             FileInputStream fileIn = new FileInputStream(TRACKER_PATH);
             ObjectInputStream objIn = new ObjectInputStream(fileIn);
-            chart = (PieChart) objIn.readObject();
+            data = (ObservableList<PieChart.Data>) objIn.readObject();
             fileIn.close();
             objIn.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        return chart;
+        return data;
     }
 
 }

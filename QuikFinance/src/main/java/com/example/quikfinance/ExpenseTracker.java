@@ -25,13 +25,15 @@ public class ExpenseTracker extends Application {
     private ListView<String> expenseListView = new ListView<>();
     private ObservableList<String> expenseList = FXCollections.observableArrayList();
     private TrackerStorage storage = TrackerStorage.instance();
-    private PieChart pieChart = storage.getChart();
+    private PieChart pieChart = new PieChart();
 
     // Define the categories
     private final String[] categories = { "Food", "Transportation", "Housing", "Entertainment", "Utilities", "Other" };
 
     @Override
     public void start(Stage primaryStage) {
+        storage.deserialize();
+        pieChart.setData(storage.getData());
 
         // Set up the UI
         GridPane gridPane = new GridPane();
@@ -134,7 +136,7 @@ public class ExpenseTracker extends Application {
         }
         pieChart.setData(pieChartData);
 
-        storage.update(pieChart);
+        storage.update(pieChartData);
         storage.serialize();
     }
 
