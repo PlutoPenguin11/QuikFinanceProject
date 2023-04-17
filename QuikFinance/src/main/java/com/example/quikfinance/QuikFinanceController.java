@@ -382,12 +382,8 @@ public class QuikFinanceController implements Initializable {
         update();
     }
 
-    @FXML
-    private void update() {
-        storage.updateAll(transactions, StartingBalanceTextField.getText());
-        storage.serialize();
-    }
-
+    
+    // When the user types a date for the first transaction, update the date that's stored in the object.
     @FXML
     void date1KeyTyped(KeyEvent event) {
         transactions[0].setDate(DateTextField1.getText());
@@ -441,6 +437,12 @@ public class QuikFinanceController implements Initializable {
     void date8KeyTyped(KeyEvent event) {
         transactions[7].setDate(DateTextField8.getText());
         update();
+    }
+
+    @FXML
+    private void update() {
+        storage.updateAll(transactions, StartingBalanceTextField.getText());
+        storage.serialize();
     }
 
     // Still needed:

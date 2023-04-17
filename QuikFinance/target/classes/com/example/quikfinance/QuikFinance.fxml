@@ -104,11 +104,11 @@
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font></Label>
-                              <TextField fx:id="DateTextField1" GridPane.rowIndex="3" />
-                              <TextField fx:id="DateTextField2" GridPane.rowIndex="4" />
-                              <TextField fx:id="DateTextField3" GridPane.rowIndex="5" />
-                              <TextField fx:id="DateTextField4" GridPane.rowIndex="6" />
-                              <TextField fx:id="DateTextField5" GridPane.rowIndex="7" />
+                              <TextField fx:id="DateTextField1" onKeyTyped="#date1KeyTyped" GridPane.rowIndex="3" />
+                              <TextField fx:id="DateTextField2" onKeyTyped="#date2KeyTyped" GridPane.rowIndex="4" />
+                              <TextField fx:id="DateTextField3" onKeyTyped="#date3KeyTyped" GridPane.rowIndex="5" />
+                              <TextField fx:id="DateTextField4" onKeyTyped="#date4KeyTyped" GridPane.rowIndex="6" />
+                              <TextField fx:id="DateTextField5" onKeyTyped="#date5KeyTyped" GridPane.rowIndex="7" />
                               <TextField fx:id="DescriptionTextField1" onKeyTyped="#description1KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <TextField fx:id="DescriptionTextField2" onKeyTyped="#description2KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                               <TextField fx:id="DescriptionTextField3" onKeyTyped="#description3KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="5" />
@@ -249,9 +249,9 @@
                               <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Received" GridPane.columnIndex="4" GridPane.rowIndex="9" />
                               <ToggleButton fx:id="PaidButton8" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="10" />
                               <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Received" GridPane.columnIndex="4" GridPane.rowIndex="10" />
-                              <TextField fx:id="DateTextField8" GridPane.rowIndex="10" />
-                              <TextField fx:id="DateTextField7" GridPane.rowIndex="9" />
-                              <TextField fx:id="DateTextField6" GridPane.rowIndex="8" />
+                              <TextField fx:id="DateTextField8" onKeyTyped="#date8KeyTyped" GridPane.rowIndex="10" />
+                              <TextField fx:id="DateTextField7" onKeyTyped="#date7KeyTyped" GridPane.rowIndex="9" />
+                              <TextField fx:id="DateTextField6" onKeyTyped="#date6KeyTyped" GridPane.rowIndex="8" />
                               <TextField fx:id="DescriptionTextField6" onKeyTyped="#description6KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                               <TextField fx:id="DescriptionTextField7" onKeyTyped="#description7KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                               <TextField fx:id="DescriptionTextField8" onKeyTyped="#description8KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="10" />
