@@ -4,11 +4,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 
+import java.text.BreakIterator;
 public class QuikFinanceController {
+
     @FXML
     private TextField AmountTextField1;
     @FXML
@@ -86,6 +89,13 @@ public class QuikFinanceController {
     @FXML
     private ToggleGroup row5;
 
+    int housing;
+    int transportation;
+    int education;
+    int groceries;
+    int entertainment;
+    int other;
+
     @FXML
     void amount1KeyTyped(KeyEvent event) {
         if (AmountTextField1.getText() == "") {
@@ -100,7 +110,7 @@ public class QuikFinanceController {
     }
 
     @FXML
-    void amount2KeyTyped(KeyEvent event) {
+     void amount2KeyTyped(KeyEvent event) {
         if (AmountTextField2.getText() == "") {
             BalanceTextField2.setText("");
             return;
@@ -181,6 +191,7 @@ public class QuikFinanceController {
     void amount8KeyTyped(KeyEvent event) {
         if (AmountTextField8.getText() == "") {
             BalanceTextField8.setText("");
+
             return;
         }
         double amount = Double.parseDouble(AmountTextField8.getText());
@@ -188,5 +199,35 @@ public class QuikFinanceController {
         double runningBalance = startingBalance - amount;
         String runningBalanceString = String.format("%.2f", runningBalance);
         BalanceTextField8.setText(String.valueOf(runningBalanceString));
+
+        //checkCategory();
     }
+
+
+    //-------------------SUMMARY SCREEN TEXT-----------------
+    @FXML
+    private MenuButton menu1;
+    @FXML
+    private MenuButton menu2;
+    @FXML
+    private MenuButton menu3;
+    @FXML
+    private MenuButton menu4;
+    @FXML
+    private MenuButton menu5;
+    @FXML
+    private MenuButton menu6;
+    @FXML
+    private MenuButton menu7;
+    @FXML
+    private MenuButton menu8;
+
+    @FXML
+    private Label sum2;
+
+    public void checkCategory(){
+    //System.out.println(menu8.getText());
+    }
+   // @FXML
+    //void
 }

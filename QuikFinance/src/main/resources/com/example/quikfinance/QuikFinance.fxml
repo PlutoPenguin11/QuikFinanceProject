@@ -136,7 +136,7 @@
                               <TextField fx:id="BalanceTextField3" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="5" />
                               <TextField fx:id="BalanceTextField4" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="6" />
                               <TextField fx:id="BalanceTextField5" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                              <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                              <MenuButton fx:id="menu1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                  <items>
                                     <MenuItem mnemonicParsing="false" text="Housing" />
                                     <MenuItem mnemonicParsing="false" text="Transportation" />
@@ -146,7 +146,7 @@
                                     <MenuItem mnemonicParsing="false" text="Other" />
                                  </items>
                               </MenuButton>
-                              <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                              <MenuButton fx:id="menu2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                  <items>
                                     <MenuItem mnemonicParsing="false" text="Housing" />
                                     <MenuItem mnemonicParsing="false" text="Transportation" />
@@ -156,7 +156,7 @@
                                     <MenuItem mnemonicParsing="false" text="Other" />
                                  </items>
                               </MenuButton>
-                              <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                              <MenuButton fx:id="menu3" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                  <items>
                                     <MenuItem mnemonicParsing="false" text="Housing" />
                                     <MenuItem mnemonicParsing="false" text="Transportation" />
@@ -166,7 +166,7 @@
                                     <MenuItem mnemonicParsing="false" text="Other" />
                                  </items>
                               </MenuButton>
-                              <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                              <MenuButton fx:id="menu4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                  <items>
                                     <MenuItem mnemonicParsing="false" text="Housing" />
                                     <MenuItem mnemonicParsing="false" text="Transportation" />
@@ -176,7 +176,7 @@
                                     <MenuItem mnemonicParsing="false" text="Other" />
                                  </items>
                               </MenuButton>
-                              <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                              <MenuButton fx:id="menu5" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="7">
                                  <items>
                                     <MenuItem mnemonicParsing="false" text="Housing" />
                                     <MenuItem mnemonicParsing="false" text="Transportation" />
@@ -188,7 +188,7 @@
                               </MenuButton>
                               <TextField fx:id="StartingBalanceTextField" GridPane.columnIndex="6" />
                               <Label text="Starting Balance:" GridPane.columnIndex="5" />
-                              <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                              <MenuButton fx:id="menu6" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="8">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="Housing" />
                                   <MenuItem mnemonicParsing="false" text="Transportation" />
@@ -198,7 +198,7 @@
                                     <MenuItem mnemonicParsing="false" text="Other" />
                                 </items>
                               </MenuButton>
-                              <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                              <MenuButton fx:id="menu7" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="9">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="Housing" />
                                   <MenuItem mnemonicParsing="false" text="Transportation" />
@@ -208,7 +208,7 @@
                                     <MenuItem mnemonicParsing="false" text="Other" />
                                 </items>
                               </MenuButton>
-                              <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                              <MenuButton fx:id="menu8" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="10">
                                 <items>
                                     <MenuItem mnemonicParsing="false" text="Housing" />
                                   <MenuItem mnemonicParsing="false" text="Transportation" />
@@ -266,26 +266,26 @@
                            </rowConstraints>
                            <children>
                               <Label text="Category" />
-                              <Label text="Amount" GridPane.columnIndex="1" />
-                              <Label text="Percent" GridPane.columnIndex="2" />
-                              <Label text="Housing" GridPane.rowIndex="1" />
-                              <Label text="Transportation" GridPane.rowIndex="2" />
-                              <Label text="Education" GridPane.rowIndex="3" />
-                              <Label text="Groceries" GridPane.rowIndex="4" />
-                              <Label text="Entertainment" GridPane.rowIndex="5" />
+                              <Label fx:id= "amountCat" text="Amount" GridPane.columnIndex="1" />
+                              <Label fx:id= "percentCat" text="Percent" GridPane.columnIndex="2" />
+                              <Label fx:id= "housingCat" text="Housing" GridPane.rowIndex="1" />
+                              <Label fx:id= "transportationCat" text="Transportation" GridPane.rowIndex="2" />
+                              <Label fx:id= "educationCat" text="Education" GridPane.rowIndex="3" />
+                              <Label fx:id= "groceriesCat" text="Groceries" GridPane.rowIndex="4" />
+                              <Label fx:id= "entertainmentCat" text="Entertainment" GridPane.rowIndex="5" />
                               <Label text="Other" GridPane.rowIndex="6" />
-                              <Label text="(Amount)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label text="(Amount)" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label text="(Amount)" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label text="(Amount)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Label text="(Amount)" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <Label text="(Amount)" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                              <Label text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <Label text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <Label text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                              <Label text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                              <Label text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                              <Label text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Label fx:id="sum1" text="(Amount)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="sum2" text="(Amoun" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="sum3" text="(Amount)" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="sum4" text="(Amount)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="sum5" text="(Amount)" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label fx:id="sum6" text="(Amount)" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label fx:id="percent1" text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label fx:id="percent2" text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label fx:id="percent3" text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label fx:id="percent4" text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label fx:id="percent5" text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label fx:id="percent6" text="(Percent)" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                            </children>
                         </GridPane>
                         <PieChart layoutX="486.0" layoutY="14.0" prefHeight="300.0" prefWidth="300.0" />
