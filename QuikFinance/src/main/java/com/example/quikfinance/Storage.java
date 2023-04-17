@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 
 public class Storage {
 
-    private final static String FILE_PATH = "QuikFinance/src/main/resources/com/example/quikfinance/ledger.ser";
+    private final static String LEDGER_PATH = "QuikFinance/src/main/resources/com/example/quikfinance/ledger.ser";
     private Transaction[] transactionArray;
     private static Storage uniqueInstance = new Storage();
 
@@ -39,7 +39,7 @@ public class Storage {
 
     public void serialize() {
         try {
-            FileOutputStream fileOut = new FileOutputStream(FILE_PATH);
+            FileOutputStream fileOut = new FileOutputStream(LEDGER_PATH);
             ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
             objOut.writeObject(transactionArray);
             objOut.close();
@@ -51,7 +51,7 @@ public class Storage {
 
     public void deserialize() {
         try {
-            FileInputStream fileIn = new FileInputStream(FILE_PATH);
+            FileInputStream fileIn = new FileInputStream(LEDGER_PATH);
             ObjectInputStream objIn = new ObjectInputStream(fileIn);
             transactionArray = (Transaction[]) objIn.readObject();
             fileIn.close();
