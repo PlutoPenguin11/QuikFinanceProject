@@ -2,6 +2,9 @@ package com.example.quikfinance;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.example.quikfinance.storage.LedgerStorage;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -453,6 +456,11 @@ public class QuikFinanceController implements Initializable {
     void showExpenseTracker() {
         ExpenseTracker expenseTracker = new ExpenseTracker();
         expenseTracker.start(new Stage());
+    }
+
+    @FXML
+    void startingBalanceKeyTyped(KeyEvent event) {
+        amountKeyTyped(null);
     }
 
     @FXML

@@ -1,10 +1,12 @@
-package com.example.quikfinance;
+package com.example.quikfinance.storage;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+
+import com.example.quikfinance.Transaction;
 
 
 public class LedgerStorage {

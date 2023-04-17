@@ -208,7 +208,7 @@
                                     <MenuItem mnemonicParsing="false" text="Other" />
                                  </items>
                               </MenuButton>
-                              <TextField fx:id="StartingBalanceTextField" GridPane.columnIndex="6" />
+                              <TextField fx:id="StartingBalanceTextField" onKeyTyped="#startingBalanceKeyTyped" GridPane.columnIndex="6" />
                               <Label text="Starting Balance:" GridPane.columnIndex="5">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
