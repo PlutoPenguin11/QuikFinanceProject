@@ -1,6 +1,8 @@
 package com.example.quikfinance;
 
-public class Transaction {
+import java.io.Serializable;
+
+public class Transaction implements Serializable {
     private String date;
     private String description;
     // private Category category;
