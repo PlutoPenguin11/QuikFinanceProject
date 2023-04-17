@@ -15,7 +15,7 @@ public class LedgerStorage {
     private final static String STARTING_BALANCE_PATH = "QuikFinance/src/main/resources/com/example/quikfinance/balance.ser";
     private String startingBalance;
     private Transaction[] transactionArray;
-    private static LedgerStorage uniqueInstance = new LedgerStorage();
+    private static LedgerStorage uniqueInstance;
 
     private LedgerStorage() {
         transactionArray = new Transaction[8];
@@ -23,6 +23,8 @@ public class LedgerStorage {
 
     // For singleton design pattern. Enforces there only being 1 instance.
     public static LedgerStorage instance() {
+        if (uniqueInstance == null) 
+            uniqueInstance = new LedgerStorage();
         return uniqueInstance;
     }
 
