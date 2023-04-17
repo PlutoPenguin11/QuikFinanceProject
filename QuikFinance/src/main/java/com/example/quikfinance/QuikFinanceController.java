@@ -126,7 +126,7 @@ public class QuikFinanceController implements Initializable {
         storage.deserialize();
         transactions = storage.getList();
 
-        StartingBalanceTextField.setText("500.0");
+        StartingBalanceTextField.setText(storage.getStartingBalance());
 
         amountFields = new TextField[] { AmountTextField1, AmountTextField2, AmountTextField3, AmountTextField4,
                                          AmountTextField5, AmountTextField6, AmountTextField7, AmountTextField8 };
@@ -384,7 +384,7 @@ public class QuikFinanceController implements Initializable {
 
     @FXML
     private void update() {
-        storage.updateAll(transactions);
+        storage.updateAll(transactions, StartingBalanceTextField.getText());
         storage.serialize();
     }
 
