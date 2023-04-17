@@ -388,6 +388,61 @@ public class QuikFinanceController implements Initializable {
         storage.serialize();
     }
 
+    @FXML
+    void date1KeyTyped(KeyEvent event) {
+        transactions[0].setDate(DateTextField1.getText());
+        update();
+    }
+
+    // When the user types a date for the second transaction, update the date that's stored in the object.
+    @FXML
+    void date2KeyTyped(KeyEvent event) {
+        transactions[1].setDate(DateTextField2.getText());
+        update();
+    }
+
+    // When the user types a date for the third transaction, update the date that's stored in the object.
+    @FXML
+    void date3KeyTyped(KeyEvent event) {
+        transactions[2].setDate(DateTextField3.getText());
+        update();
+    }
+
+    // When the user types a date for the fourth transaction, update the date that's stored in the object.
+    @FXML
+    void date4KeyTyped(KeyEvent event) {
+        transactions[3].setDate(DateTextField4.getText());
+        update();
+    }
+
+    // When the user types a date for the fifth transaction, update the date that's stored in the object.
+    @FXML
+    void date5KeyTyped(KeyEvent event) {
+        transactions[4].setDate(DateTextField5.getText());
+        update();
+    }
+
+    // When the user types a date for the sixth transaction, update the date that's stored in the object.
+    @FXML
+    void date6KeyTyped(KeyEvent event) {
+        transactions[5].setDate(DateTextField6.getText());
+        update();
+    }
+
+    // When the user types a date for the seventh transaction, update the date that's stored in the object.
+    @FXML
+    void date7KeyTyped(KeyEvent event) {
+        transactions[6].setDate(DateTextField7.getText());
+        update();
+    }
+
+    // When the user types a date for the eighth transaction, update the date that's stored in the object.
+    @FXML
+    void date8KeyTyped(KeyEvent event) {
+        transactions[7].setDate(DateTextField8.getText());
+        update();
+    }
+
     // Still needed:
     // In the GUI, implement the date as a drop-down selection.
     // Behind the scenes, update the transaction objects' dates.
