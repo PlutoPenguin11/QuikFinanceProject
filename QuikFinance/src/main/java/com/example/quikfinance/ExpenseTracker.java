@@ -12,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import com.example.quikfinance.storage.TrackerStorage;
 
@@ -26,14 +27,14 @@ public class ExpenseTracker extends Application {
     private ObservableList<String> expenseList = FXCollections.observableArrayList();
     private TrackerStorage storage = TrackerStorage.instance();
     private PieChart pieChart = new PieChart();
+    private ArrayList<String> expenses;
 
     // Define the categories
     private final String[] categories = { "Food", "Transportation", "Housing", "Entertainment", "Utilities", "Other" };
 
     @Override
     public void start(Stage primaryStage) {
-        storage.deserialize();
-        pieChart.setData(storage.getData());
+        expenses = storage.deserialize();
 
         // Set up the UI
         GridPane gridPane = new GridPane();
@@ -80,9 +81,11 @@ public class ExpenseTracker extends Application {
             String expense = expenseField.getText();
             String category = categoryComboBox.getValue();
             LocalDate date = datePicker.getValue();
+            String node = expense + " - " + category + " - " + date;
+            storage.add(node);
 
             // Add the expense to the list
-            expenseList.add(expense + " - " + category + " - " + date);
+            expenseList.add(node);
 
             // Update the pie chart
             updatePieChart();
@@ -91,6 +94,7 @@ public class ExpenseTracker extends Application {
             expenseField.clear();
             categoryComboBox.setValue(categories[0]);
             datePicker.setValue(LocalDate.now());
+            storage.serialize();
         });
 
         // Create the scene
@@ -101,10 +105,14 @@ public class ExpenseTracker extends Application {
         primaryStage.setScene(scene);
         // Show the stage
         primaryStage.show();
+        
+        for (String node : expenses) {
+            expenseList.add(node);
+        }
+        updatePieChart();
 
     }
 
-    // Update the pie chart with the current expenses
     // Update the pie chart with the current expenses
     private void updatePieChart() {
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
@@ -136,8 +144,6 @@ public class ExpenseTracker extends Application {
         }
         pieChart.setData(pieChartData);
 
-        storage.update(pieChartData);
-        storage.serialize();
     }
 
     public static void main(String[] args) {

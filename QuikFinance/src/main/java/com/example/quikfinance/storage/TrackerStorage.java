@@ -5,18 +5,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.chart.PieChart;
+import java.util.ArrayList;
 
 public class TrackerStorage {
     private final static String TRACKER_PATH = "QuikFinance/src/main/resources/com/example/quikfinance/tracker.ser";
     private static TrackerStorage uniqueInstance;
-    ObservableList<PieChart.Data> data;
+    ArrayList<String> expenses;
 
     private TrackerStorage() {
-        data = FXCollections.observableArrayList();
+        expenses = new ArrayList<>();
     }
 
     public static TrackerStorage instance() {
@@ -25,16 +22,20 @@ public class TrackerStorage {
         return uniqueInstance;
     }
 
-    public void update(ObservableList<PieChart.Data> data) {
-        this.data = data;
+    public void update(ArrayList<String> list) {
+        this.expenses = list;
     }
 
-    public ObservableList<PieChart.Data> getData() {
-        return data;
+    public void add(String node) {
+        expenses.add(node);
+    }
+
+    public ArrayList<String> getList() {
+        return expenses;
     }
 
     public void delete() {
-        data = FXCollections.observableArrayList();
+        expenses.clear();
         serialize();
     }
 
@@ -43,7 +44,7 @@ public class TrackerStorage {
         try {
             FileOutputStream fileOut = new FileOutputStream(TRACKER_PATH);
             ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
-            objOut.writeObject(data);
+            objOut.writeObject(expenses);
             objOut.close();
             fileOut.close();
         } catch (IOException e) {
@@ -51,19 +52,19 @@ public class TrackerStorage {
         }
     }
 
-    public ObservableList<PieChart.Data> deserialize() {
+    public ArrayList<String> deserialize() {
         // Reads the pie chart
         try {
             FileInputStream fileIn = new FileInputStream(TRACKER_PATH);
             ObjectInputStream objIn = new ObjectInputStream(fileIn);
-            data = (ObservableList<PieChart.Data>) objIn.readObject();
+            expenses = (ArrayList<String>) objIn.readObject();
             fileIn.close();
             objIn.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        return data;
+        return expenses;
     }
 
 }
