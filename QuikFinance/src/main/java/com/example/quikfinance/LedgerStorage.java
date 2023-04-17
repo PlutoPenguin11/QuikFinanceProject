@@ -7,19 +7,19 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 
-public class Storage {
+public class LedgerStorage {
 
     private final static String LEDGER_PATH = "QuikFinance/src/main/resources/com/example/quikfinance/ledger.ser";
     private final static String STARTING_BALANCE_PATH = "QuikFinance/src/main/resources/com/example/quikfinance/balance.ser";
     private String startingBalance;
     private Transaction[] transactionArray;
-    private static Storage uniqueInstance = new Storage();
+    private static LedgerStorage uniqueInstance = new LedgerStorage();
 
-    private Storage() {
+    private LedgerStorage() {
         transactionArray = new Transaction[8];
     }
 
-    public static Storage instance() {
+    public static LedgerStorage instance() {
         return uniqueInstance;
     }
 
