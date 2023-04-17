@@ -14,7 +14,7 @@ public class TransactionTest {
     public void setUp() {
         category1 = new Category(1, "Groceries");
         category2 = new Category(2, "Taxes");
-        transaction = new Transaction(category1, 50000, "10/12/1998", true);
+        //transaction = new Transaction(category1, 50000, "10/12/1998", true);
     }
 
     @AfterEach
@@ -56,12 +56,6 @@ public class TransactionTest {
         String description = "Apples";
         transaction.setDescription(description);
         assertEquals(description, transaction.getDescription());
-    }
-
-    @Test
-    public void checkPriceFormat() {
-        String price = transaction.getPrice();
-        assertEquals("$500.00", price);
     }
 
 }

@@ -1,15 +1,20 @@
 package com.example.quikfinance;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
-public class QuikFinanceController {
+public class QuikFinanceController implements Initializable {
 
     // Initialize the functional parts of the graphical user interface.
     @FXML
@@ -104,73 +109,113 @@ public class QuikFinanceController {
     private ToggleButton PaidButton7;
     @FXML
     private ToggleButton PaidButton8;
+    @FXML
+    private ToggleButton UpdateButton;
 
     // Initialize eight transaction objects.
-    private Transaction transaction1 = new Transaction();
-    private Transaction transaction2 = new Transaction();
-    private Transaction transaction3 = new Transaction();
-    private Transaction transaction4 = new Transaction();
-    private Transaction transaction5 = new Transaction();
-    private Transaction transaction6 = new Transaction();
-    private Transaction transaction7 = new Transaction();
-    private Transaction transaction8 = new Transaction();
+    private LedgerStorage storage = LedgerStorage.instance();
 
     // Put these eight transaction objects into an array.
-    private Transaction[] transactions = {transaction1, transaction2, transaction3, transaction4, transaction5, transaction6, transaction7, transaction8};
+    private Transaction[] transactions;
+    private TextField[] amountFields;
+    private TextField[] dateFields;
+    private TextField[] descriptionFields;
+    private ToggleButton[] paidButtons;
+
+    @FXML @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        storage.deserialize();
+        transactions = storage.getList();
+
+        StartingBalanceTextField.setText(storage.getStartingBalance());
+
+        // Organizes TextFields for reading storage, since we aren't using array lists.
+        amountFields = new TextField[] { AmountTextField1, AmountTextField2, AmountTextField3, AmountTextField4,
+                                         AmountTextField5, AmountTextField6, AmountTextField7, AmountTextField8 };
+        dateFields = new TextField[] { DateTextField1, DateTextField2, DateTextField3, DateTextField4,
+                                       DateTextField5, DateTextField6, DateTextField7, DateTextField8 };
+        descriptionFields = new TextField[] { DescriptionTextField1, DescriptionTextField2, DescriptionTextField3, DescriptionTextField4, 
+                                              DescriptionTextField5, DescriptionTextField6, DescriptionTextField7, DescriptionTextField8 };
+        paidButtons = new ToggleButton[] { PaidButton1, PaidButton2, PaidButton3, PaidButton4, PaidButton5, PaidButton6, PaidButton7, PaidButton8 };
+
+        // Instantiates all null objects
+        for (Transaction transaction : transactions) {
+            if (transaction == null) {
+                transaction = new Transaction();
+            }
+        }
+
+        // Reads and fills in stored data
+        for (int i = 0; i < 8; i++) {
+            dateFields[i].setText(transactions[i].getDate());
+            descriptionFields[i].setText(transactions[i].getDescription());
+            paidButtons[i].setSelected(transactions[i].getStatus());
+            amountFields[i].setText(Math.abs(transactions[i].getAmount())+"");
+        }
+
+        // Updates running balance fields based on stored data
+        amountKeyTyped(null);
+    }
 
     // When the user types a description for the first transaction, update the description that's stored in the object.
     @FXML
     void description1KeyTyped(KeyEvent event) {
         transactions[0].setDescription(DescriptionTextField1.getText());
+        update();
     }
 
     // When the user types a description for the second transaction, update the description that's stored in the object.
     @FXML
     void description2KeyTyped(KeyEvent event) {
         transactions[1].setDescription(DescriptionTextField2.getText());
+        update();
     }
 
     // When the user types a description for the third transaction, update the description that's stored in the object.
     @FXML
     void description3KeyTyped(KeyEvent event) {
         transactions[2].setDescription(DescriptionTextField3.getText());
+        update();
     }
 
     // When the user types a description for the fourth transaction, update the description that's stored in the object.
     @FXML
     void description4KeyTyped(KeyEvent event) {
         transactions[3].setDescription(DescriptionTextField4.getText());
+        update();
     }
 
     // When the user types a description for the fifth transaction, update the description that's stored in the object.
     @FXML
     void description5KeyTyped(KeyEvent event) {
         transactions[4].setDescription(DescriptionTextField5.getText());
+        update();
     }
 
     // When the user types a description for the sixth transaction, update the description that's stored in the object.
     @FXML
     void description6KeyTyped(KeyEvent event) {
         transactions[5].setDescription(DescriptionTextField6.getText());
+        update();
     }
 
     // When the user types a description for the seventh transaction, update the description that's stored in the object.
     @FXML
     void description7KeyTyped(KeyEvent event) {
         transactions[6].setDescription(DescriptionTextField7.getText());
+        update();
     }
 
     // When the user types a description for the eighth transaction, update the description that's stored in the object.
     @FXML
     void description8KeyTyped(KeyEvent event) {
         transactions[7].setDescription(DescriptionTextField8.getText());
+        update();
     }
 
     // When the user types amounts for any transaction, update the running balance for all transactions. Also update the amount that's stored in the object.
     @FXML
     void amountKeyTyped(KeyEvent event) {
-
-
 
         // Get the double value of the starting balance text field.
         double startingBalance = Double.parseDouble(StartingBalanceTextField.getText());
@@ -338,6 +383,82 @@ public class QuikFinanceController {
         String formattedEighthRunningBalance = String.format("$%.2f", eighthRunningBalance);
         if (AmountTextField8.getText() != "")
             BalanceTextField8.setText(formattedEighthRunningBalance);
+
+        update();
+    }
+
+    
+    // When the user types a date for the first transaction, update the date that's stored in the object.
+    @FXML
+    void date1KeyTyped(KeyEvent event) {
+        transactions[0].setDate(DateTextField1.getText());
+        update();
+    }
+
+    // When the user types a date for the second transaction, update the date that's stored in the object.
+    @FXML
+    void date2KeyTyped(KeyEvent event) {
+        transactions[1].setDate(DateTextField2.getText());
+        update();
+    }
+
+    // When the user types a date for the third transaction, update the date that's stored in the object.
+    @FXML
+    void date3KeyTyped(KeyEvent event) {
+        transactions[2].setDate(DateTextField3.getText());
+        update();
+    }
+
+    // When the user types a date for the fourth transaction, update the date that's stored in the object.
+    @FXML
+    void date4KeyTyped(KeyEvent event) {
+        transactions[3].setDate(DateTextField4.getText());
+        update();
+    }
+
+    // When the user types a date for the fifth transaction, update the date that's stored in the object.
+    @FXML
+    void date5KeyTyped(KeyEvent event) {
+        transactions[4].setDate(DateTextField5.getText());
+        update();
+    }
+
+    // When the user types a date for the sixth transaction, update the date that's stored in the object.
+    @FXML
+    void date6KeyTyped(KeyEvent event) {
+        transactions[5].setDate(DateTextField6.getText());
+        update();
+    }
+
+    // When the user types a date for the seventh transaction, update the date that's stored in the object.
+    @FXML
+    void date7KeyTyped(KeyEvent event) {
+        transactions[6].setDate(DateTextField7.getText());
+        update();
+    }
+
+    // When the user types a date for the eighth transaction, update the date that's stored in the object.
+    @FXML
+    void date8KeyTyped(KeyEvent event) {
+        transactions[7].setDate(DateTextField8.getText());
+        update();
+    }
+
+    @FXML
+    void paidButtonHit() {
+        amountKeyTyped(null);
+    }
+
+    @FXML
+    void showExpenseTracker() {
+        ExpenseTracker expenseTracker = new ExpenseTracker();
+        expenseTracker.start(new Stage());
+    }
+
+    @FXML
+    private void update() {
+        storage.updateAll(transactions, StartingBalanceTextField.getText());
+        storage.serialize();
     }
 
     // Still needed:
