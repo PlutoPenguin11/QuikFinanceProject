@@ -478,8 +478,5 @@ public class QuikFinanceController implements Initializable {
 
     // Still needed:
     // In the GUI, implement the date as a drop-down selection.
-    // Behind the scenes, update the transaction objects' dates.
     // In the GUI, implement the category menu so that once the user selects a category, the GUI displays that category instead of the word "Category".
-    // Behind the scenes, update the transaction objects' categories.
-    // Behind the scenes, write the transactions' attributes to a file so that they're stored between runs.
 }
