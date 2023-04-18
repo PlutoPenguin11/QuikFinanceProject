@@ -180,6 +180,7 @@
                               <Button fx:id="InterestCalculator" mnemonicParsing="false" onAction="#showInterestCalculator" prefHeight="26.0" prefWidth="187.0" text="Interest Calculator" GridPane.columnIndex="1" />
                               <Button fx:id="expenseTrackerButton" mnemonicParsing="false" onAction="#showExpenseTracker" prefHeight="26.0" prefWidth="187.0" text="Open Tracker" />
                               <Button fx:id="clearTrackerButton" mnemonicParsing="false" onAction="#clearExpenseTracker" prefHeight="26.0" prefWidth="155.0" text="Clear Tracker" GridPane.rowIndex="1" />
+                              <Button fx:id="clearLedgerButton" mnemonicParsing="false" onAction="#clearLedger" prefHeight="26.0" prefWidth="187.0" text="Clear Ledger" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Label text="Category" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
