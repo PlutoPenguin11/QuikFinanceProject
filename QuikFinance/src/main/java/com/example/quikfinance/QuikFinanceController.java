@@ -188,7 +188,8 @@ public class QuikFinanceController implements Initializable {
         CategoryChoiceBox7.getItems().addAll(category);
         CategoryChoiceBox8.getItems().addAll(category);
 
-        // Update the object when the user takes action on the drop-down.
+        // When the user clicks a category, call the method that updates
+        // the object when the user takes action on the drop-down.
         CategoryChoiceBox1.setOnAction(this::updateCategoryWithinObject);
         CategoryChoiceBox2.setOnAction(this::updateCategoryWithinObject);
         CategoryChoiceBox3.setOnAction(this::updateCategoryWithinObject);
@@ -202,6 +203,8 @@ public class QuikFinanceController implements Initializable {
 
     @FXML
     void updateCategoryWithinObject(ActionEvent event) {
+        // When the user clicks a category, the transaction object's "category"
+        // instance variable updates with the string value of the chosen category.
         transactions[0].setCategory(CategoryChoiceBox1.getValue());
         transactions[1].setCategory(CategoryChoiceBox2.getValue());
         transactions[2].setCategory(CategoryChoiceBox3.getValue());
