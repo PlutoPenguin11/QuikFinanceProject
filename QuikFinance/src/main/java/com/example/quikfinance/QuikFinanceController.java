@@ -9,11 +9,8 @@ import com.example.quikfinance.storage.TrackerStorage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -97,6 +94,24 @@ public class QuikFinanceController implements Initializable {
     private ToggleGroup row4;
     @FXML
     private ToggleGroup row5;
+    private ChoiceBox<String> CategoryChoiceBox1;
+    @FXML
+    private ChoiceBox<String> CategoryChoiceBox2;
+    @FXML
+    private ChoiceBox<String> CategoryChoiceBox3;
+    @FXML
+    private ChoiceBox<String> CategoryChoiceBox4;
+    @FXML
+    private ChoiceBox<String> CategoryChoiceBox5;
+    @FXML
+    private ChoiceBox<String> CategoryChoiceBox6;
+    @FXML
+    private ChoiceBox<String> CategoryChoiceBox7;
+    @FXML
+    private ChoiceBox<String> CategoryChoiceBox8;
+    // Create an array of strings that will be the options in the drop-down category menu.
+    private String[] category = {"Rent", "Utilities", "Groceries", "Transportation", "Entertainment", "Paycheck", "Other"};
+
     @FXML
     private ToggleButton PaidButton1;
     @FXML
@@ -162,6 +177,39 @@ public class QuikFinanceController implements Initializable {
 
         // Updates running balance fields based on stored data
         amountKeyTyped(null);
+
+        // Add the options to the ledger's category drop-down.
+        CategoryChoiceBox1.getItems().addAll(category);
+        CategoryChoiceBox2.getItems().addAll(category);
+        CategoryChoiceBox3.getItems().addAll(category);
+        CategoryChoiceBox4.getItems().addAll(category);
+        CategoryChoiceBox5.getItems().addAll(category);
+        CategoryChoiceBox6.getItems().addAll(category);
+        CategoryChoiceBox7.getItems().addAll(category);
+        CategoryChoiceBox8.getItems().addAll(category);
+
+        // Update the object when the user takes action on the drop-down.
+        CategoryChoiceBox1.setOnAction(this::updateCategoryWithinObject);
+        CategoryChoiceBox2.setOnAction(this::updateCategoryWithinObject);
+        CategoryChoiceBox3.setOnAction(this::updateCategoryWithinObject);
+        CategoryChoiceBox4.setOnAction(this::updateCategoryWithinObject);
+        CategoryChoiceBox5.setOnAction(this::updateCategoryWithinObject);
+        CategoryChoiceBox6.setOnAction(this::updateCategoryWithinObject);
+        CategoryChoiceBox7.setOnAction(this::updateCategoryWithinObject);
+        CategoryChoiceBox8.setOnAction(this::updateCategoryWithinObject);
+
+    }
+
+    @FXML
+    void updateCategoryWithinObject(ActionEvent event) {
+        transactions[0].setCategory(CategoryChoiceBox1.getValue());
+        transactions[1].setCategory(CategoryChoiceBox2.getValue());
+        transactions[2].setCategory(CategoryChoiceBox3.getValue());
+        transactions[3].setCategory(CategoryChoiceBox4.getValue());
+        transactions[4].setCategory(CategoryChoiceBox5.getValue());
+        transactions[5].setCategory(CategoryChoiceBox6.getValue());
+        transactions[6].setCategory(CategoryChoiceBox7.getValue());
+        transactions[7].setCategory(CategoryChoiceBox8.getValue());
     }
 
     // When the user types a description for the first transaction, update the
