@@ -48,23 +48,35 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.quikfinance.QuikFinanceController">
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0"
+   xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+   fx:controller="com.example.quikfinance.QuikFinanceController">
    <children>
       <TabPane minHeight="500.0" minWidth="800.0" tabClosingPolicy="UNAVAILABLE">
          <tabs>
             <Tab text="Ledger">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #03AC13;">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"
+                     style="-fx-background-color: #03AC13;">
                      <children>
-                        <GridPane hgap="8.0" style="-fx-background-color: #4CBD49;" vgap="8.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+                        <GridPane hgap="8.0" style="-fx-background-color: #4CBD49;" vgap="8.0"
+                           AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="8.0"
+                           AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
                            <columnConstraints>
-                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="50.0" prefWidth="60.0" />
-                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="50.0" prefWidth="60.0" />
-                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0"
+                                 prefWidth="100.0" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0"
+                                 prefWidth="100.0" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0"
+                                 prefWidth="100.0" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="50.0"
+                                 prefWidth="60.0" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="50.0"
+                                 prefWidth="60.0" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0"
+                                 prefWidth="100.0" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0"
+                                 prefWidth="100.0" />
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -83,155 +95,265 @@
                               <Label text="Date" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
-                                 </font></Label>
-                              <Label text="Description" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 </font>
+                              </Label>
+                              <Label text="Description" GridPane.columnIndex="1"
+                                 GridPane.rowIndex="2">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
-                                 </font></Label>
+                                 </font>
+                              </Label>
                               <Label text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
-                                 </font></Label>
+                                 </font>
+                              </Label>
                               <Label text="Amount" GridPane.columnIndex="5" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
-                                 </font></Label>
-                              <Label text="Running Balance" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                                 </font>
+                              </Label>
+                              <Label text="Running Balance" GridPane.columnIndex="6"
+                                 GridPane.rowIndex="2">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
-                                 </font></Label>
-                              <TextField fx:id="DateTextField1" onKeyTyped="#date1KeyTyped" GridPane.rowIndex="3" />
-                              <TextField fx:id="DateTextField2" onKeyTyped="#date2KeyTyped" GridPane.rowIndex="4" />
-                              <TextField fx:id="DateTextField3" onKeyTyped="#date3KeyTyped" GridPane.rowIndex="5" />
-                              <TextField fx:id="DateTextField4" onKeyTyped="#date4KeyTyped" GridPane.rowIndex="6" />
-                              <TextField fx:id="DateTextField5" onKeyTyped="#date5KeyTyped" GridPane.rowIndex="7" />
-                              <TextField fx:id="DescriptionTextField1" onKeyTyped="#description1KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField fx:id="DescriptionTextField2" onKeyTyped="#description2KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextField fx:id="DescriptionTextField3" onKeyTyped="#description3KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <TextField fx:id="DescriptionTextField4" onKeyTyped="#description4KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                              <TextField fx:id="DescriptionTextField5" onKeyTyped="#description5KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                              <ToggleButton fx:id="PaidButton1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 </font>
+                              </Label>
+                              <TextField fx:id="DateTextField1" onKeyTyped="#date1KeyTyped"
+                                 GridPane.rowIndex="3" />
+                              <TextField fx:id="DateTextField2" onKeyTyped="#date2KeyTyped"
+                                 GridPane.rowIndex="4" />
+                              <TextField fx:id="DateTextField3" onKeyTyped="#date3KeyTyped"
+                                 GridPane.rowIndex="5" />
+                              <TextField fx:id="DateTextField4" onKeyTyped="#date4KeyTyped"
+                                 GridPane.rowIndex="6" />
+                              <TextField fx:id="DateTextField5" onKeyTyped="#date5KeyTyped"
+                                 GridPane.rowIndex="7" />
+                              <TextField fx:id="DescriptionTextField1"
+                                 onKeyTyped="#description1KeyTyped" GridPane.columnIndex="1"
+                                 GridPane.rowIndex="3" />
+                              <TextField fx:id="DescriptionTextField2"
+                                 onKeyTyped="#description2KeyTyped" GridPane.columnIndex="1"
+                                 GridPane.rowIndex="4" />
+                              <TextField fx:id="DescriptionTextField3"
+                                 onKeyTyped="#description3KeyTyped" GridPane.columnIndex="1"
+                                 GridPane.rowIndex="5" />
+                              <TextField fx:id="DescriptionTextField4"
+                                 onKeyTyped="#description4KeyTyped" GridPane.columnIndex="1"
+                                 GridPane.rowIndex="6" />
+                              <TextField fx:id="DescriptionTextField5"
+                                 onKeyTyped="#description5KeyTyped" GridPane.columnIndex="1"
+                                 GridPane.rowIndex="7" />
+                              <ToggleButton fx:id="PaidButton1" maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid"
+                                 GridPane.columnIndex="3" GridPane.rowIndex="3">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="row1" />
                                  </toggleGroup>
                               </ToggleButton>
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Received" toggleGroup="$row1" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                              <ToggleButton maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit"
+                                 text="Received" toggleGroup="$row1" GridPane.columnIndex="4"
+                                 GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
                               <Label text="Received" GridPane.columnIndex="4" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
-                                 </font></Label>
-                              <ToggleButton fx:id="PaidButton2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                 </font>
+                              </Label>
+                              <ToggleButton fx:id="PaidButton2" maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid"
+                                 GridPane.columnIndex="3" GridPane.rowIndex="4">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="row2" />
                                  </toggleGroup>
                               </ToggleButton>
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Received" toggleGroup="$row2" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                              <ToggleButton fx:id="PaidButton3" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                              <ToggleButton maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit"
+                                 text="Received" toggleGroup="$row2" GridPane.columnIndex="4"
+                                 GridPane.rowIndex="4" />
+                              <ToggleButton fx:id="PaidButton3" maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid"
+                                 GridPane.columnIndex="3" GridPane.rowIndex="5">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="row3" />
                                  </toggleGroup>
                               </ToggleButton>
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Received" toggleGroup="$row3" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                              <ToggleButton fx:id="PaidButton4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                              <ToggleButton maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit"
+                                 text="Received" toggleGroup="$row3" GridPane.columnIndex="4"
+                                 GridPane.rowIndex="5" />
+                              <ToggleButton fx:id="PaidButton4" maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid"
+                                 GridPane.columnIndex="3" GridPane.rowIndex="6">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="row4" />
                                  </toggleGroup>
                               </ToggleButton>
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Received" toggleGroup="$row4" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                              <ToggleButton fx:id="PaidButton5" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                              <ToggleButton maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit"
+                                 text="Received" toggleGroup="$row4" GridPane.columnIndex="4"
+                                 GridPane.rowIndex="6" />
+                              <ToggleButton fx:id="PaidButton5" maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid"
+                                 GridPane.columnIndex="3" GridPane.rowIndex="7">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="row5" />
                                  </toggleGroup>
                               </ToggleButton>
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Received" toggleGroup="$row5" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                              <TextField fx:id="AmountTextField1" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                              <TextField fx:id="AmountTextField2" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                              <TextField fx:id="AmountTextField3" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                              <TextField fx:id="AmountTextField4" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                              <TextField fx:id="AmountTextField5" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-                              <TextField fx:id="BalanceTextField1" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                              <TextField fx:id="BalanceTextField2" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                              <TextField fx:id="BalanceTextField3" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                              <TextField fx:id="BalanceTextField4" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                              <TextField fx:id="BalanceTextField5" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                              <TextField fx:id="StartingBalanceTextField" onKeyTyped="#startingBalanceKeyTyped" GridPane.columnIndex="6" />
+                              <ToggleButton maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit"
+                                 text="Received" toggleGroup="$row5" GridPane.columnIndex="4"
+                                 GridPane.rowIndex="7" />
+                              <TextField fx:id="AmountTextField1" onKeyTyped="#amountKeyTyped"
+                                 GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                              <TextField fx:id="AmountTextField2" onKeyTyped="#amountKeyTyped"
+                                 GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                              <TextField fx:id="AmountTextField3" onKeyTyped="#amountKeyTyped"
+                                 GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                              <TextField fx:id="AmountTextField4" onKeyTyped="#amountKeyTyped"
+                                 GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                              <TextField fx:id="AmountTextField5" onKeyTyped="#amountKeyTyped"
+                                 GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                              <TextField fx:id="BalanceTextField1" editable="false"
+                                 GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                              <TextField fx:id="BalanceTextField2" editable="false"
+                                 GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                              <TextField fx:id="BalanceTextField3" editable="false"
+                                 GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                              <TextField fx:id="BalanceTextField4" editable="false"
+                                 GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                              <TextField fx:id="BalanceTextField5" editable="false"
+                                 GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                              <TextField fx:id="StartingBalanceTextField"
+                                 onKeyTyped="#startingBalanceKeyTyped" GridPane.columnIndex="6" />
                               <Label text="Starting Balance:" GridPane.columnIndex="5">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
-                                 </font></Label>
-                              <ToggleButton fx:id="PaidButton6" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Received" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-                              <ToggleButton fx:id="PaidButton7" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Received" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-                              <ToggleButton fx:id="PaidButton8" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid" GridPane.columnIndex="3" GridPane.rowIndex="10" />
-                              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Received" GridPane.columnIndex="4" GridPane.rowIndex="10" />
-                              <TextField fx:id="DateTextField8" onKeyTyped="#date8KeyTyped" GridPane.rowIndex="10" />
-                              <TextField fx:id="DateTextField7" onKeyTyped="#date7KeyTyped" GridPane.rowIndex="9" />
-                              <TextField fx:id="DateTextField6" onKeyTyped="#date6KeyTyped" GridPane.rowIndex="8" />
-                              <TextField fx:id="DescriptionTextField6" onKeyTyped="#description6KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                              <TextField fx:id="DescriptionTextField7" onKeyTyped="#description7KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                              <TextField fx:id="DescriptionTextField8" onKeyTyped="#description8KeyTyped" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                              <TextField fx:id="AmountTextField6" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-                              <TextField fx:id="AmountTextField7" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-                              <TextField fx:id="AmountTextField8" onKeyTyped="#amountKeyTyped" GridPane.columnIndex="5" GridPane.rowIndex="10" />
-                              <TextField fx:id="BalanceTextField6" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="8" />
-                              <TextField fx:id="BalanceTextField7" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="9" />
-                              <TextField fx:id="BalanceTextField8" editable="false" GridPane.columnIndex="6" GridPane.rowIndex="10" />
-                              <Button fx:id="InterestCalculator" mnemonicParsing="false" onAction="#showInterestCalculator" prefHeight="26.0" prefWidth="187.0" text="Interest Calculator" GridPane.columnIndex="1" />
-                              <Button fx:id="expenseTrackerButton" mnemonicParsing="false" onAction="#showExpenseTracker" prefHeight="26.0" prefWidth="187.0" text="Open Tracker" />
-                              <Button fx:id="clearTrackerButton" mnemonicParsing="false" onAction="#clearExpenseTracker" prefHeight="26.0" prefWidth="155.0" text="Clear Tracker" GridPane.rowIndex="1" />
+                                 </font>
+                              </Label>
+                              <ToggleButton fx:id="PaidButton6" maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid"
+                                 GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                              <ToggleButton maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit"
+                                 text="Received" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                              <ToggleButton fx:id="PaidButton7" maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid"
+                                 GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                              <ToggleButton maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit"
+                                 text="Received" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                              <ToggleButton fx:id="PaidButton8" maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit" text="Paid"
+                                 GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                              <ToggleButton maxWidth="1.7976931348623157E308"
+                                 mnemonicParsing="false" onMouseClicked="#paidButtonHit"
+                                 text="Received" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                              <TextField fx:id="DateTextField8" onKeyTyped="#date8KeyTyped"
+                                 GridPane.rowIndex="10" />
+                              <TextField fx:id="DateTextField7" onKeyTyped="#date7KeyTyped"
+                                 GridPane.rowIndex="9" />
+                              <TextField fx:id="DateTextField6" onKeyTyped="#date6KeyTyped"
+                                 GridPane.rowIndex="8" />
+                              <TextField fx:id="DescriptionTextField6"
+                                 onKeyTyped="#description6KeyTyped" GridPane.columnIndex="1"
+                                 GridPane.rowIndex="8" />
+                              <TextField fx:id="DescriptionTextField7"
+                                 onKeyTyped="#description7KeyTyped" GridPane.columnIndex="1"
+                                 GridPane.rowIndex="9" />
+                              <TextField fx:id="DescriptionTextField8"
+                                 onKeyTyped="#description8KeyTyped" GridPane.columnIndex="1"
+                                 GridPane.rowIndex="10" />
+                              <TextField fx:id="AmountTextField6" onKeyTyped="#amountKeyTyped"
+                                 GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                              <TextField fx:id="AmountTextField7" onKeyTyped="#amountKeyTyped"
+                                 GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                              <TextField fx:id="AmountTextField8" onKeyTyped="#amountKeyTyped"
+                                 GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                              <TextField fx:id="BalanceTextField6" editable="false"
+                                 GridPane.columnIndex="6" GridPane.rowIndex="8" />
+                              <TextField fx:id="BalanceTextField7" editable="false"
+                                 GridPane.columnIndex="6" GridPane.rowIndex="9" />
+                              <TextField fx:id="BalanceTextField8" editable="false"
+                                 GridPane.columnIndex="6" GridPane.rowIndex="10" />
+                              <Button fx:id="InterestCalculator" mnemonicParsing="false"
+                                 onAction="#showInterestCalculator" prefHeight="26.0"
+                                 prefWidth="187.0" text="Interest Calculator"
+                                 GridPane.columnIndex="1" />
+                              <Button fx:id="expenseTrackerButton" mnemonicParsing="false"
+                                 onAction="#showExpenseTracker" prefHeight="26.0" prefWidth="187.0"
+                                 text="Open Tracker" />
+                              <Button fx:id="clearTrackerButton" mnemonicParsing="false"
+                                 onAction="#clearExpenseTracker" prefHeight="26.0" prefWidth="155.0"
+                                 text="Clear Tracker" GridPane.rowIndex="1" />
                               <Label text="Category" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <MenuButton fx:id="MenuButton1" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                                  <MenuItem mnemonicParsing="false" text="Action 2" />
-                                </items>
+                              <MenuButton fx:id="MenuButton1" mnemonicParsing="false"
+                                 prefHeight="26.0" prefWidth="138.0" text="Category"
+                                 GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                                    <MenuItem mnemonicParsing="false" text="Action 2" />
+                                 </items>
                               </MenuButton>
-                              <MenuButton fx:id="MenuButton2" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="4">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                                  <MenuItem mnemonicParsing="false" text="Action 2" />
-                                </items>
+                              <MenuButton fx:id="MenuButton2" mnemonicParsing="false"
+                                 prefHeight="26.0" prefWidth="166.0" text="Category"
+                                 GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                                    <MenuItem mnemonicParsing="false" text="Action 2" />
+                                 </items>
                               </MenuButton>
-                              <MenuButton fx:id="MenuButton3" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="5">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                                  <MenuItem mnemonicParsing="false" text="Action 2" />
-                                </items>
+                              <MenuButton fx:id="MenuButton3" mnemonicParsing="false"
+                                 prefHeight="26.0" prefWidth="167.0" text="Category"
+                                 GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                                    <MenuItem mnemonicParsing="false" text="Action 2" />
+                                 </items>
                               </MenuButton>
-                              <MenuButton fx:id="MenuButton4" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="6">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                                  <MenuItem mnemonicParsing="false" text="Action 2" />
-                                </items>
+                              <MenuButton fx:id="MenuButton4" mnemonicParsing="false"
+                                 prefHeight="26.0" prefWidth="175.0" text="Category"
+                                 GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                                    <MenuItem mnemonicParsing="false" text="Action 2" />
+                                 </items>
                               </MenuButton>
-                              <MenuButton fx:id="MenuButton5" mnemonicParsing="false" prefHeight="26.0" prefWidth="173.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="7">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                                  <MenuItem mnemonicParsing="false" text="Action 2" />
-                                </items>
+                              <MenuButton fx:id="MenuButton5" mnemonicParsing="false"
+                                 prefHeight="26.0" prefWidth="173.0" text="Category"
+                                 GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                                    <MenuItem mnemonicParsing="false" text="Action 2" />
+                                 </items>
                               </MenuButton>
-                              <MenuButton fx:id="MenuButton6" mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="8">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                                  <MenuItem mnemonicParsing="false" text="Action 2" />
-                                </items>
+                              <MenuButton fx:id="MenuButton6" mnemonicParsing="false"
+                                 prefHeight="26.0" prefWidth="178.0" text="Category"
+                                 GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                                    <MenuItem mnemonicParsing="false" text="Action 2" />
+                                 </items>
                               </MenuButton>
-                              <MenuButton fx:id="MenuButton7" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="9">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                                  <MenuItem mnemonicParsing="false" text="Action 2" />
-                                </items>
+                              <MenuButton fx:id="MenuButton7" mnemonicParsing="false"
+                                 prefHeight="26.0" prefWidth="146.0" text="Category"
+                                 GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                                    <MenuItem mnemonicParsing="false" text="Action 2" />
+                                 </items>
                               </MenuButton>
-                              <MenuButton fx:id="MenuButton8" mnemonicParsing="false" prefWidth="170.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="10">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                                  <MenuItem mnemonicParsing="false" text="Action 2" />
-                                </items>
+                              <MenuButton fx:id="MenuButton8" mnemonicParsing="false"
+                                 prefWidth="170.0" text="Category" GridPane.columnIndex="2"
+                                 GridPane.rowIndex="10">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                                    <MenuItem mnemonicParsing="false" text="Action 2" />
+                                 </items>
                               </MenuButton>
                            </children>
                            <padding>
@@ -240,6 +362,66 @@
                         </GridPane>
                      </children>
                   </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Spending Summary">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <children>
+                     <GridPane>
+                        <columnConstraints>
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                           <Label text=" Category" />
+                           <Label fx:id="amountCat" text=" Amount" GridPane.columnIndex="1" />
+                           <Label fx:id="percentCat" text=" Percent" GridPane.columnIndex="2" />
+                           <Label fx:id="housingCat" text=" Housing" GridPane.rowIndex="1" />
+                           <Label fx:id="transportationCat" text=" Transportation"
+                              GridPane.rowIndex="2" />
+                           <Label fx:id="educationCat" text=" Education" GridPane.rowIndex="3" />
+                           <Label fx:id="groceriesCat" text=" Groceries" GridPane.rowIndex="4" />
+                           <Label fx:id="entertainmentCat" text=" Entertainment"
+                              GridPane.rowIndex="5" />
+                           <Label text=" Other" GridPane.rowIndex="6" />
+                           <Label fx:id="sum1" text="(Amount)" GridPane.columnIndex="1"
+                              GridPane.rowIndex="1" />
+                           <Label fx:id="sum2" text="(Amount)" GridPane.columnIndex="1"
+                              GridPane.rowIndex="2" />
+                           <Label fx:id="sum3" text="(Amount)" GridPane.columnIndex="1"
+                              GridPane.rowIndex="3" />
+                           <Label fx:id="sum4" text="(Amount)" GridPane.columnIndex="1"
+                              GridPane.rowIndex="4" />
+                           <Label fx:id="sum5" text="(Amount)" GridPane.columnIndex="1"
+                              GridPane.rowIndex="5" />
+                           <Label fx:id="sum6" text="(Amount)" GridPane.columnIndex="1"
+                              GridPane.rowIndex="6" />
+                           <Label fx:id="percent1" text="(Percent)" GridPane.columnIndex="2"
+                              GridPane.rowIndex="1" />
+                           <Label fx:id="percent2" text="(Percent)" GridPane.columnIndex="2"
+                              GridPane.rowIndex="2" />
+                           <Label fx:id="percent3" text="(Percent)" GridPane.columnIndex="2"
+                              GridPane.rowIndex="3" />
+                           <Label fx:id="percent4" text="(Percent)" GridPane.columnIndex="2"
+                              GridPane.rowIndex="4" />
+                           <Label fx:id="percent5" text="(Percent)" GridPane.columnIndex="2"
+                              GridPane.rowIndex="5" />
+                           <Label fx:id="percent6" text="(Percent)" GridPane.columnIndex="2"
+                              GridPane.rowIndex="6" />
+                        </children>
+                     </GridPane>
+                  </children>
                </content>
             </Tab>
          </tabs>
