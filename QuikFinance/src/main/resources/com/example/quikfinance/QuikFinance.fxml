@@ -184,49 +184,49 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                              <MenuButton fx:id="MenuButton1" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="Action 1" />
                                   <MenuItem mnemonicParsing="false" text="Action 2" />
                                 </items>
                               </MenuButton>
-                              <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                              <MenuButton fx:id="MenuButton2" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="Action 1" />
                                   <MenuItem mnemonicParsing="false" text="Action 2" />
                                 </items>
                               </MenuButton>
-                              <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                              <MenuButton fx:id="MenuButton3" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="Action 1" />
                                   <MenuItem mnemonicParsing="false" text="Action 2" />
                                 </items>
                               </MenuButton>
-                              <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                              <MenuButton fx:id="MenuButton4" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="Action 1" />
                                   <MenuItem mnemonicParsing="false" text="Action 2" />
                                 </items>
                               </MenuButton>
-                              <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="173.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                              <MenuButton fx:id="MenuButton5" mnemonicParsing="false" prefHeight="26.0" prefWidth="173.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="7">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="Action 1" />
                                   <MenuItem mnemonicParsing="false" text="Action 2" />
                                 </items>
                               </MenuButton>
-                              <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                              <MenuButton fx:id="MenuButton6" mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="8">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="Action 1" />
                                   <MenuItem mnemonicParsing="false" text="Action 2" />
                                 </items>
                               </MenuButton>
-                              <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                              <MenuButton fx:id="MenuButton7" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="9">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="Action 1" />
                                   <MenuItem mnemonicParsing="false" text="Action 2" />
                                 </items>
                               </MenuButton>
-                              <MenuButton mnemonicParsing="false" prefWidth="170.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                              <MenuButton fx:id="MenuButton8" mnemonicParsing="false" prefWidth="170.0" text="Category" GridPane.columnIndex="2" GridPane.rowIndex="10">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="Action 1" />
                                   <MenuItem mnemonicParsing="false" text="Action 2" />
