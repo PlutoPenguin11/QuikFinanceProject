@@ -5,14 +5,27 @@ import java.io.Serializable;
 public class Transaction implements Serializable {
     private String date;
     private String description;
+    // private Category category;
     private boolean wasPaid;
     protected double amount;
 
     public Transaction() {
         this.date = "";
         this.description = "";
+        // this.category = null;
         this.wasPaid = true;
         this.amount = 0;
+
+        // category.updatePrice((int) amount);
+    }
+    public Transaction(String date, String description, Category category, boolean wasPaid, int amount) {
+        this.date = date;
+        this.description = description;
+        // this.category = category;
+        this.wasPaid = wasPaid;
+        this.amount = amount;
+
+        category.updatePrice(amount);
     }
 
     // Methods to set and get the date of the transaction.
@@ -29,6 +42,15 @@ public class Transaction implements Serializable {
     }
     public String getDescription() {
         return description;
+    }
+
+    // Methods to set and get the category of the transaction.
+    public void setCategory(Category newCategory) {
+        // category = newCategory;
+    }
+    public Category getCategory() {
+        // return category;
+        return null;
     }
 
     // Methods to set and get the boolean that tells us whether the amount was paid or received.
