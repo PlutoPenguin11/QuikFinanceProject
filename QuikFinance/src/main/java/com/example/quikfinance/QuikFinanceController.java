@@ -461,6 +461,12 @@ public class QuikFinanceController implements Initializable {
     }
 
     @FXML
+    void showInterestCalculator() {
+        InterestCalculator interestCalculator = new InterestCalculator();
+        interestCalculator.start(new Stage());
+    }
+
+    @FXML
     void clearExpenseTracker() {
         storedChart.delete();
     }
