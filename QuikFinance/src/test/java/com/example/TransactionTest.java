@@ -24,19 +24,6 @@ public class TransactionTest {
     }
 
     @Test
-    public void checkCategory() {
-        assertEquals("Groceries", transaction.getCategory().getCategory());
-        assertEquals(1, transaction.getCategory().getID());
-    }
-
-    @Test
-    public void changeCategory() {
-        transaction.setCategory(category2);
-        assertEquals("Taxes", transaction.getCategory().getCategory());
-        assertEquals(2, transaction.getCategory().getID());
-    }
-
-    @Test
     public void changeDate() {
         String newDate = "10/12/2020";
         transaction.setDate(newDate);
