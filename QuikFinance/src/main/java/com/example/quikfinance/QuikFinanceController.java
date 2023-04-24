@@ -547,42 +547,18 @@ public class QuikFinanceController implements Initializable {
 
     @FXML
     void clearLedger(){
-        System.out.println("ledger cleared");
-        AmountTextField1.setText("0");
-        AmountTextField2.setText("0");
-        AmountTextField3.setText("0");
-        AmountTextField4.setText("0");
-        AmountTextField5.setText("0");
-        AmountTextField6.setText("0");
-        AmountTextField7.setText("0");
-        AmountTextField8.setText("0");
-        BalanceTextField1.setText("");
-        BalanceTextField2.setText("");
-        BalanceTextField3.setText("");
-        BalanceTextField4.setText("");
-        BalanceTextField5.setText("");
-        BalanceTextField6.setText("");
-        BalanceTextField7.setText("");
-        BalanceTextField8.setText("");
-        DateTextField1.setText("");
-        DateTextField2.setText("");
-        DateTextField3.setText("");
-        DateTextField4.setText("");
-        DateTextField5.setText("");
-        DateTextField6.setText("");
-        DateTextField7.setText("");
-        DateTextField8.setText("");
-        DescriptionTextField1.setText("");
-        DescriptionTextField2.setText("");
-        DescriptionTextField3.setText("");
-        DescriptionTextField4.setText("");
-        DescriptionTextField5.setText("");
-        DescriptionTextField6.setText("");
-        DescriptionTextField7.setText("");
-        DescriptionTextField8.setText("");
+        StartingBalanceTextField.setText("0");
+
+        for (int i = 0; i < 8; i++) {
+            dateFields[i].setText("");
+            descriptionFields[i].setText("");
+            paidButtons[i].setSelected(true);
+            amountFields[i].setText("0");
+            transactions[i] = new Transaction();
+        }
+
+        amountKeyTyped(null);
         update();
-
-
     }
 
     // Still needed:
